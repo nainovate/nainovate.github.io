@@ -1,2 +1,2 @@
-# neurulus.github.io
-Neurulus Labs
+# nainovate.github.io
+Nainovate Technologies
