@@ -20,3 +20,31 @@ function navigateToCloudMonitoringandAnalytics() {
     window.location.href = "#CloudMonitoringandAnalytics";
 }
 
+function navigateToDataAnalytics() {
+    window.location.href = 'data-analytics.html';
+}
+function navigateToDataWarehousing() {
+    window.location.href = "#DataWarehousing";
+}
+function navigateToBigDataAnalytics() {
+    window.location.href = "#BigDataAnalytics";
+}
+function navigateToDataVisualization() {
+    window.location.href = "#DataVisualization";
+}
+function navigateToCustomerAnalytics() {
+    window.location.href = "#CustomerAnalytics";
+}
+function navigateToStreamingProcess() {
+    window.location.href = "#StreamingProcess";
+}
+function navigateToDataMining() {
+    window.location.href = "#DataMining";
+}
+
+
+
+
+
+
+

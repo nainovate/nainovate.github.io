@@ -961,8 +961,8 @@ Service Area
   z-index: 1;
   border-radius: 15px;
   margin-bottom: 30px;
-  height: 385px;
-  max-height: 385px !important;
+  height: 440px;
+  max-height: 440px !important;
 }
 
 .service-card:hover::before {
