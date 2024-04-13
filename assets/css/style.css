@@ -961,8 +961,8 @@ Service Area
   z-index: 1;
   border-radius: 15px;
   margin-bottom: 30px;
-  height: 440px;
-  max-height: 440px !important;
+  /* height: 380px;
+  max-height: 380px !important; */
 }
 
 .service-card:hover::before {
@@ -2444,7 +2444,7 @@ Blog Card End
 Footer Section 
 ====================================*/
 .bg-footer {
-  margin-top: 80px;
+  margin-top: 100px;
   background: #8fa398;
   position: relative;
   border-radius: 40% 0 0 0;
