@@ -42,6 +42,33 @@ function navigateToDataMining() {
     window.location.href = "#DataMining";
 }
 
+function navigateToDevOps() {
+    window.location.href = 'devops.html';
+}
+function navigateToOrchestration() {
+    window.location.href = "#Orchestration";
+}
+function navigateToMonitoringandLogging() {
+    window.location.href = "#MonitoringandLogging";
+}
+function navigateToContainerization() {
+    window.location.href = "#Containerization";
+}
+function navigateToConfigurationManagement() {
+    window.location.href = "#ConfigurationManagement";
+}
+function navigateToIaC() {
+    window.location.href = "#IaC";
+}
+function navigateToCICD() {
+    window.location.href = "#CI-CD";
+}
+
+
+
+
+
+
 
 
 
