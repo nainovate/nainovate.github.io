@@ -5621,7 +5621,7 @@ z-index: 1;
     display: block!important;
 }
 .bg-footer{
-  background: #0BAC56 !important;
+  background: #8fa398 !important;
 }
 .main-banner{
   padding-bottom: 0px !important;
@@ -5653,7 +5653,7 @@ section {
 
 @media only screen and (min-width: 768px) and (max-width: 991px){
 .bg-footer {
-  background: #0BAC56 !important;
+  background: #8fa398 !important;
 }
 }
 
