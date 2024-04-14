@@ -435,6 +435,7 @@
     display: none;
   }
   .service-area {
+    padding-top: 40px;
     position: relative;
   }
   .service-area .owl-nav {

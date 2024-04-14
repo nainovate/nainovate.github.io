@@ -64,6 +64,18 @@ function navigateToCICD() {
     window.location.href = "#CI-CD";
 }
 
+function navigateToMobileApplication() {
+    window.location.href = 'mobile-application.html';
+}
+function navigateToNativeApp() {
+    window.location.href = "#NativeApp";
+}
+function navigateToAPIs() {
+    window.location.href = "#APIs";
+}
+function navigateToUIUX() {
+    window.location.href = "#UIUX";
+}
 
 
 

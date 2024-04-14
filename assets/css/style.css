@@ -279,6 +279,7 @@ Navbar Area
   padding-bottom: 0;
   padding-right: 0;
   padding-left: 0;
+  border-bottom: 1px solid #8fa398;
 }
 
 .navbar-light {
@@ -530,8 +531,6 @@ Main Banner Style
 .main-banner {
   position: relative;
   z-index: 1;
-  padding-top: 100px;
-  padding-bottom: 130px;
   overflow: hidden;
 }
 
@@ -564,13 +563,14 @@ Main Banner Style
 }
 
 .banner-img {
+  padding-top: 30px;
   position: relative;
 }
 
 .banner-img img {
   max-width: 100%;
-  -webkit-animation: moveBounce 9s linear infinite;
-          animation: moveBounce 9s linear infinite;
+  -webkit-animation: moveBounce 10s linear infinite;
+          animation: moveBounce 10s linear infinite;
 }
 
 .banner-shape-1 {
