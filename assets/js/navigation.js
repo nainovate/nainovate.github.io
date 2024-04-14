@@ -77,6 +77,30 @@ function navigateToUIUX() {
     window.location.href = "#UIUX";
 }
 
+function navigateToMobileApplication() {
+    window.location.href = 'software-development.html';
+}
+function navigateToRapidPrototyping() {
+    window.location.href = "#RapidPrototyping";
+}
+function navigateToAutomation() {
+    window.location.href = "#Automation";
+}
+function navigateToLowCode() {
+    window.location.href = "#LowCode";
+}
+function navigateToTesting() {
+    window.location.href = "#Testing";
+}
+function navigateToCompliance() {
+    window.location.href = "#Compliance";
+}
+function navigatePrototyping() {
+    window.location.href = "#Prototyping";
+}
+
+
+
 
 
 
