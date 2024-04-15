@@ -77,7 +77,7 @@ function navigateToUIUX() {
     window.location.href = "#UIUX";
 }
 
-function navigateToMobileApplication() {
+function navigateToSoftwareDevelopment() {
     window.location.href = 'software-development.html';
 }
 function navigateToRapidPrototyping() {
