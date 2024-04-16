@@ -95,8 +95,30 @@ function navigateToTesting() {
 function navigateToCompliance() {
     window.location.href = "#Compliance";
 }
-function navigatePrototyping() {
+function navigateToPrototyping() {
     window.location.href = "#Prototyping";
+}
+
+function navigateToEservice() {
+    window.location.href = 'e-services.html';
+}
+function navigateToWebDesign() {
+    window.location.href = "#webDesign";
+}
+function navigateToEcommerceSolutions() {
+    window.location.href = "#EcommerceSolutions";
+}
+function navigateToCMS() {
+    window.location.href = "#CMS";
+}
+function navigateToWebProtals() {
+    window.location.href = "#webPortals";
+}
+function navigateToCRM() {
+    window.location.href = "#CRM";
+}
+function navigateToLMS() {
+    window.location.href = "#LMS";
 }
 
 
