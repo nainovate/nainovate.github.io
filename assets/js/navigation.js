@@ -121,7 +121,40 @@ function navigateToLMS() {
     window.location.href = "#LMS";
 }
 
+function navigateToML() {
+    window.location.href = 'machine-learning.html';
+}
+function navigateToModelDevelopment() {
+    window.location.href = "#ModelDevelopment";
+}
+function navigateToPredictiveAnalytics() {
+    window.location.href = "#Analytics";
+}
+function navigateToRecommendation() {
+    window.location.href = "#recommendation";
+}
+function navigateToAnomalyDetection() {
+    window.location.href = "#AnomalyDetection";
+}
+function navigateToNLP() {
+    window.location.href = "#NLP";
+}
+function navigateToSentimentAnalysis() {
+    window.location.href = "#sentimentAnalysis";
+}
 
+function navigateToCV() {
+    window.location.href = 'computer-vision.html';
+}
+function navigateToFacialRecognition() {
+    window.location.href = "#facialRecognition";
+}
+function navigateToImageClassification() {
+    window.location.href = "#imageClassification";
+}
+function navigateToVisualQualityInspection() {
+    window.location.href = "#visualQualityInspection";
+}
 
 
 
