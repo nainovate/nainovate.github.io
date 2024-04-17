@@ -160,22 +160,22 @@ function navigateToGenAI() {
     window.location.href = 'generative-AI.html';
 }
 function navigateToDecisionMaking() {
-    window.location.href = "#decisionMaking";
+    window.location.href = "generative-AI.html#decisionMaking";
 }
 function navigateToDocumentProcessing() {
-    window.location.href = "#documentProcessing";
+    window.location.href = "generative-AI.html#documentProcessing";
 }
 function navigateToLanguageProcessing() {
-    window.location.href = "#languageProcessing";
+    window.location.href = "generative-AI.html#languageProcessing";
 }
 function navigateToSTT() {
-    window.location.href = "#stt";
+    window.location.href = "generative-AI.html#stt";
 }
 function navigateToSmartVision() {
-    window.location.href = "#smartVision";
+    window.location.href = "generative-AI.html#smartVision";
 }
 function navigateToPredictiveInsights() {
-    window.location.href = "#predictiveInsights";
+    window.location.href = "generative-AI.html#predictiveInsights";
 }
 
 
