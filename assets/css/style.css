@@ -44,6 +44,16 @@ This files table contents are outlined below>>>>>
 Default CSS
 =================================================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap");
+
+@font-face { 
+  font-family: 'MyFont'; 
+  src: 
+      url('Kusanagi.otf')  
+      format('opentype'); 
+  font-weight: normal; 
+  font-style: normal; 
+} 
+
 body {
   font-size: 16px;
   line-height: 1.8;
@@ -288,6 +298,14 @@ Navbar Area
 }
 
 .navbar-light .navbar-brand img {
+  height: 50px;
+  width: auto;
+  float: left;
+}
+
+.navbar-light .navbar-brand-sticky img {
+  height: 50px;
+  width: auto;
   float: left;
 }
 
@@ -317,7 +335,7 @@ Navbar Area
 }
 
 .sticky-nav .main-nav nav .navbar-nav .nav-item a {
-  color: #fff;
+  color: #222222;
 }
 
 .sticky-nav .menu-btn .seo-btn {
@@ -361,11 +379,21 @@ Navbar Area
 }
 
 .main-nav nav .navbar-nav .nav-item a:hover, .main-nav nav .navbar-nav .nav-item a :focus {
-  color: #000000;
+  color: #fd0606;
+}
+
+.nav-item:hover::before {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: red;
 }
 
 .main-nav nav .navbar-nav .nav-item a.active {
-  color: #000000 !important;
+  color: #f60404 !important;
 }
 
 .main-nav nav .navbar-nav .nav-item a.active i {
@@ -4821,7 +4849,7 @@ Back To Top Button
   left: 0;
   z-index: 999999;
   display: block;
-  background: #4356d6;
+  background: #64d89a;
 }
 
 .preloader-wave {
@@ -5113,12 +5141,12 @@ Animation CSS End
   padding-bottom: 0%;
 }
 .navbar-brand {
-  color: #0BAC56 !important;
-  font-family: var(--bs-font-monospace) !important;
+  color: #222222 !important;
+  font-family: 'Kusanagi.otf' !important;
 }
 
 .sticky-nav .main-nav {
-  background-color: #8fa398 ;
+  background-color: #fff ;
 }
 .default-btn{
   background-color: #0BAC56 ;
@@ -5129,11 +5157,33 @@ Animation CSS End
 
 } */
 .navbar-brand-sticky{
-  color: white;
-  font-size: large;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #222222 !important;
+  font-family: 'Kusanagi.otf' !important;
 }
 .main-banner{
   background: rgb(11,172,86,0.2);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-container img {
+  max-height: 50px; /* Set a maximum height for the logo image */
+  width: auto;
+  margin-right: 10px; /* Adjust as needed for spacing */
+}
+
+.logo-container-sticky {
+  display: flex;
+  align-items: center;
+}
+.logo-container-sticky img {
+  max-height: 50px; /* Set a maximum height for the logo image */
+  width: auto;
+  margin-right: 10px; /* Adjust as needed for spacing */
 }
 
 section {
@@ -5593,7 +5643,8 @@ z-index: 1;
 
 @media only screen and (max-width: 991px) {
   .mobile-nav .logo{
-    color: #0BAC56 !important;
+    color: #222222 !important;
+    font-family: 'Kusanagi.otf' !important;
   }
 }
 

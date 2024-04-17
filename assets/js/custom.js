@@ -16,6 +16,24 @@
         }
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                navLinks.forEach(navLink => navLink.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+
+        const subMenuLinks = document.querySelectorAll(".dropdown-menu .nav-link");
+        subMenuLinks.forEach(subLink => {
+            subLink.addEventListener("click", function () {
+                const servicesLink = document.querySelector(".nav-item .nav-link");
+                servicesLink.classList.add("active");
+            });
+        });
+    });
+
     // FAQ Accordion JS
 	$('.accordion').find('.accordion-title').on('click', function(){
 		// Adds Active Class
