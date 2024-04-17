@@ -156,6 +156,29 @@ function navigateToVisualQualityInspection() {
     window.location.href = "#visualQualityInspection";
 }
 
+function navigateToGenAI() {
+    window.location.href = 'generative-AI.html';
+}
+function navigateToDecisionMaking() {
+    window.location.href = "#decisionMaking";
+}
+function navigateToDocumentProcessing() {
+    window.location.href = "#documentProcessing";
+}
+function navigateToLanguageProcessing() {
+    window.location.href = "#languageProcessing";
+}
+function navigateToSTT() {
+    window.location.href = "#stt";
+}
+function navigateToSmartVision() {
+    window.location.href = "#smartVision";
+}
+function navigateToPredictiveInsights() {
+    window.location.href = "#predictiveInsights";
+}
+
+
 
 
 
