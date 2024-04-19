@@ -47,7 +47,7 @@
                     <span class="Kusanagi">Nainovate</span>
                 </div>
             </a>
-        </div>        
+        </div>
 
         <!-- Menu For Desktop Device -->
         <div class="main-nav top-nav">
@@ -74,8 +74,10 @@
                             <li class="nav-item">
                                 <a class="nav-link">Services</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="index.html#DigitalTansformations" class="nav-link">Digital Tansformations</a></li>
-                                    <li class="nav-item"><a href="index.html#AITransformation" class="nav-link">AI Tansformations</a></li>
+                                    <li class="nav-item"><a href="index.html#DigitalTansformations"
+                                            class="nav-link">Digital Tansformations</a></li>
+                                    <li class="nav-item"><a href="index.html#AITransformation" class="nav-link">AI
+                                            Tansformations</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -153,6 +155,9 @@
     </div>
     <!-- Contact Area End -->
     <!-- Contact Section -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Style The Contact Form How Ever You Prefer -->
     <section class="contact-section pb-100 ">
         <div class="container">
             <div class="section-title text-center"><span>Contact Us</span>
@@ -162,15 +167,27 @@
             </div>
             <div class="contact-wrap pt-45">
                 <div class="contact-wrap-form">
-                    <form id="contactForm">
+                    <form id="gform" method="POST"
+                        action="https://script.google.com/macros/s/AKfycbx2KVupzaKETwfbq6jchbfecR6RdDN1EHLGTG3LovptB1j1vFyzTRVbzu0l0hd65na_/exec">
+                        <!-- change the form action to your script url -->
                         <div class="row">
                             <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="name" id="name" class="form-control" required
+                                    <input type="text" id="name" name="name" class="form-control"
                                         data-error="Please enter your name" placeholder="Your Name" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
+
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                    <input type="number" name="phone_number" id="phone_number" required
+                                        data-error="Please enter your number" class="form-control"
+                                        placeholder="Your Phone" />
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
                             <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
                                     <input type="email" name="email" id="email" class="form-control" required
@@ -178,76 +195,50 @@
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" name="phone_number" id="phone_number" required
-                                        data-error="Please enter your number" class="form-control"
-                                        placeholder="Your Phone" />
+                                    <input type="msg_subject" name="msg_subject" id="msg_subject" class="form-control"
+                                        required data-error="Please enter your subject" placeholder="Your Subject" />
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" name="msg_subject" id="msg_subject" class="form-control" required
-                                        data-error="Please enter your subject" placeholder="Your Subject" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12">
+
+                            <div class="col-lg-12 col-sm-12">
                                 <div class="form-group">
                                     <textarea name="message" class="form-control" id="message" cols="30" rows="8"
                                         required data-error="Write your message" placeholder="Your Message"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 text-center">
-                                <button type="submit" class="default-btn page-btn text-center">
-                                    Send Message
-                                </button>
-                                <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                <div class="clearfix"></div>
+
+
+                            <div class="col-lg-12 col-sm-12">
+                                <div class="form-group honeypot-field">
+                                    <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden
+                                        text field; must be empty to submit the form! Otherwise, we assume the user is a
+                                        spam bot.</label>
+                                    <input id="honeypot" type="text" name="honeypot" value="" />
+                                </div>
                             </div>
+
+                            <button class="button-success  form-group">
+                                <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+                        </div>
+
+                        <!-- Customise the Thankyou Message People See when they submit the form: -->
+                        <div class="thankyou_message" style="display:none;">
+                            <h2><em>Thanks</em> for contacting us!
+                                We will get back to you soon!</h2>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        </div>
     </section>
     <!-- Contact Section End -->
-    <!-- Map Area Section Start -->
-    <div class="map-area d-none">
-        <div class="container-fluid p-0">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.27991517034!2d-74.25987556253516!3d40.697670063539654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1587753923814!5m2!1sen!2sbd"></iframe>
-        </div>
-    </div>
-    <!-- Map Area Section End-->
-    <!-- Submission Area -->
-    <div class="submission-area ptb-100 d-none">
-        <div class="container">
-            <div class="submission-title">
-                <h2>Know Your Website Ranking</h2>
-            </div>
-            <form class="submission-form">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="website" placeholder="Your website" />
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="form-group border-line">
-                            <input type="text" class="form-control" id="email" placeholder="Email" />
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-md-3 offset-md-5 offset-lg-0">
-                        <button type="submit" class="default-btn">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Submission Area End -->
+
 
     <!-- Footer Area -->
     <footer id="footer" class="footer-area bg-footer">
@@ -352,7 +343,7 @@
                         </div>
                     </div>
 
-                                    </div>
+                </div>
                 <div class="col-lg-1 col-md-6 d-flex">
                     <div class="footer-single">
                         <div class="footer-single-content">
@@ -371,7 +362,7 @@
                             <img src="assets/img/logo.png" alt="logo">
                             <span class="Kusanagi fs-3" style="padding-top: 10px;">Nainovate</span>
                         </div>
-                        
+
                     </div>
                     <div class="col-12 col-sm-8 col-md-6">
                         <p class="fs--1 text-dark my-2 text-center text-md-end">© Nainovate Technologies Private
@@ -402,7 +393,7 @@
     <!-- Form Validator Min JS -->
     <script src="assets/js/form-validator.min.js"></script>
     <!-- Contact Form JS -->
-    <script src="assets/js/contact-form-script.js"></script>
+    <script data-cfasync="false" type="text/javascript" src="assets/js/form-submission-handler.js"></script>
     <!-- Custom JS -->
     <script src="assets/js/custom.js"></script>
 </body>

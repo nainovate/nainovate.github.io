@@ -1,62 +1,115 @@
-/*==============================================================*/
-// Raque Contact Form  JS
-/*==============================================================*/
-(function ($) {
-    "use strict"; // Start of use strict
-    $("#contactForm").validator().on("submit", function (event) {
-        if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            formError();
-            submitMSG(false, "Did you fill in the form properly?");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            submitForm();
-        }
-    });
+(function () {
+    // get all data in form and return object
+    function getFormData(form) {
+        var elements = form.elements;
+        var honeypot;
 
+        var fields = Object.keys(elements).filter(function (k) {
+            if (elements[k].name === "honeypot") {
+                honeypot = elements[k].value;
+                return false;
+            }
+            return true;
+        }).map(function (k) {
+            if (elements[k].name !== undefined) {
+                return elements[k].name;
+                // special case for Edge's html collection
+            } else if (elements[k].length > 0) {
+                return elements[k].item(0).name;
+            }
+        }).filter(function (item, pos, self) {
+            return self.indexOf(item) == pos && item;
+        });
 
-    function submitForm(){
-        // Initiate Variables With Form Content
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var msg_subject = $("#msg_subject").val();
-        var phone_number = $("#phone_number").val();
-        var message = $("#message").val();
+        var formData = {};
+        fields.forEach(function (name) {
+            var element = elements[name];
 
+            // singular form elements just have one value
+            formData[name] = element.value;
 
-        $.ajax({
-            type: "POST",
-            url: "assets/php/form-process.php",
-            data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&phone_number=" + phone_number + "&message=" + message,
-            success : function(text){
-                if (text == "success"){
-                    formSuccess();
-                } else {
-                    formError();
-                    submitMSG(false,text);
+            // when our element has multiple items, get their values
+            if (element.length) {
+                var data = [];
+                for (var i = 0; i < element.length; i++) {
+                    var item = element.item(i);
+                    if (item.checked || item.selected) {
+                        data.push(item.value);
+                    }
                 }
+                formData[name] = data.join(', ');
             }
         });
+
+        // add form-specific values into the data
+        formData.formDataNameOrder = JSON.stringify(fields);
+        formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+        formData.formGoogleSendEmail
+            = form.dataset.email || ""; // no email by default
+
+        return { data: formData, honeypot: honeypot };
     }
 
-    function formSuccess(){
-        $("#contactForm")[0].reset();
-        submitMSG(true, "Message Submitted!")
-    }
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        var form = event.target;
+        var formData = getFormData(form);
+        var data = formData.data;
 
-    function formError(){
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(this).removeClass();
-        });
-    }
-
-    function submitMSG(valid, msg){
-        if(valid){
-            var msgClasses = "h4 tada animated text-success";
-        } else {
-            var msgClasses = "h4 text-danger";
+        // If a honeypot field is filled, assume it was done so by a spam bot.
+        if (formData.honeypot) {
+            return false;
         }
-        $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+
+        disableAllButtons(form); // Disable all buttons when form is submitted
+
+        var url = form.action;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.result === "success") {
+                    form.reset();
+                    var formElements = form.querySelector(".form-elements");
+                    if (formElements) {
+                        formElements.style.display = "none"; // Hide form after submission
+                    }
+                    var thankYouMessage = form.querySelector(".thankyou_message");
+                    if (thankYouMessage) {
+                        thankYouMessage.style.display = "block"; // Show thank you message
+                    }
+                }
+                enableAllButtons(form); // Enable all buttons after form submission is complete
+            }
+        };
+        var encoded = Object.keys(data).map(function (k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+        }).join('&');
+        xhr.send(encoded);
     }
-}(jQuery)); // End of use strict
+
+    function loaded() {
+        // bind to the submit event of our form
+        var forms = document.querySelectorAll("form.contactForm");
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].addEventListener("submit", handleFormSubmit, false);
+        }
+    };
+    document.addEventListener("DOMContentLoaded", loaded, false);
+
+    function disableAllButtons(form) {
+        var buttons = form.querySelectorAll("button");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = true;
+        }
+    }
+
+    function enableAllButtons(form) {
+        var buttons = form.querySelectorAll("button");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].disabled = false;
+        }
+    }
+})();
