@@ -2473,7 +2473,7 @@ Footer Section
 ====================================*/
 .bg-footer {
   margin-top: 100px;
-  background: #8fa398;
+  background: #f6f6f6 ;
   position: relative;
   border-radius: 40% 0 0 0;
 }
@@ -2519,7 +2519,8 @@ Footer Section
 }
 
 .footer-single .footer-single-content p {
-  color: #fff;
+  font-size: 20px;
+  color: #222222;
   margin: 0;
 }
 
@@ -2582,7 +2583,7 @@ Footer Section
 
 .footer-list h3 {
   font-size: 25px;
-  color: #fff;
+  color: #222222;
   position: relative;
   margin-bottom: 20px;
 }
@@ -2597,15 +2598,15 @@ Footer Section
   margin-top: 10px;
   display: block;
   font-size: 17px;
-  color: #fff;
+  color: #222222;
 }
 
 .footer-list ul li i {
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .footer-list ul li a {
-  color: #fff;
+  color: #222222;
   position: relative;
   -webkit-transition: 0.7s;
   transition: 0.7s;
@@ -5672,7 +5673,7 @@ z-index: 1;
     display: block!important;
 }
 .bg-footer{
-  background: #8fa398 !important;
+  background: #f6f6f6 !important;
 }
 .main-banner{
   padding-bottom: 0px !important;
