@@ -2469,8 +2469,9 @@ Blog Card
 Blog Card End
 ====================================*/
 /*=================================
-Footer Section 
+Footer Section
 ====================================*/
+
 .bg-footer {
   margin-top: 100px;
   background: #f6f6f6 ;
@@ -5147,6 +5148,8 @@ Animation CSS End
 }
 
 .sticky-nav .main-nav {
+  border-bottom: 1px solid #8fa398;
+
   background-color: #fff ;
 }
 .default-btn{
