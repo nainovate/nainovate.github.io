@@ -1004,7 +1004,7 @@ Service Area
 }
 
 .service-card:hover h3, .service-card:hover p {
-  color: #fff;
+  color: #222222;
   z-index: 5555;
 }
 
@@ -1031,7 +1031,7 @@ Service Area
   opacity: 0;
   width: 0;
   height: 100%;
-  background-color: #64d89a;
+  background-color: rgb(11, 172, 86, 0.4);
   z-index: -1;
   -webkit-transition: 0.5s;
   transition: 0.5s;
