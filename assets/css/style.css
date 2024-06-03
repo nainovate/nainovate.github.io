@@ -1084,13 +1084,13 @@ Our Clients Area
 .client-logos-wrapper {
   overflow: hidden;
   border:2px #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   padding-top: 20px;
-  max-width: 60%;
+  max-width: 80%;
   margin: 0 auto;
   position: relative;
   height: 120px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Add shadow effect */
+  box-shadow: 2px 2px 2px 2px rgb(224, 212, 212); /* Add shadow effect */
 }
 
 .client-logos {
