@@ -1076,6 +1076,53 @@ Service Area
 /*=================================
 Service Area End
 ====================================*/
+
+
+/*=================================
+Our Clients Area
+===================================*/
+.client-logos-wrapper {
+  overflow: hidden;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding-top: 10px;
+  max-width: 60%;
+  margin: 0 auto;
+  position: relative;
+  height: 120px;
+}
+
+.client-logos {
+  display: flex;
+  animation: scrollLeft 10s linear infinite; /* Adjust the duration as needed */
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.logo-item img {
+  max-height: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes scrollLeft {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/*=================================
+End of Our Clients Area
+===================================*/
+
+
 /*=================================
 Faq Area 
 ====================================*/
