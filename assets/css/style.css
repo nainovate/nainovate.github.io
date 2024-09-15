@@ -5238,7 +5238,7 @@ Animation CSS End
 .logo-container img {
   max-height: 50px; /* Set a maximum height for the logo image */
   width: auto;
-  margin-right: 10px; /* Adjust as needed for spacing */
+  margin-right: 5px; /* Adjust as needed for spacing */
 }
 
 .logo-container-sticky {
@@ -5248,7 +5248,7 @@ Animation CSS End
 .logo-container-sticky img {
   max-height: 50px; /* Set a maximum height for the logo image */
   width: auto;
-  margin-right: 10px; /* Adjust as needed for spacing */
+  margin-right: 5px; /* Adjust as needed for spacing */
 }
 
 section {
