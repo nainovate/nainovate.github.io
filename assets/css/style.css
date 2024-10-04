@@ -5707,9 +5707,9 @@ z-index: 1;
 /* responsive css */
 
 @media only screen and (max-width: 991px) {
-  .mobile-nav .logo{
-    color: #222222 !important;
-    font-family: 'Kusanagi.otf' !important;
+  .mobile-nav .logo-container img {
+    width: auto;
+    margin-right: 5px; /* Adjust as needed for spacing */
   }
 }
 
