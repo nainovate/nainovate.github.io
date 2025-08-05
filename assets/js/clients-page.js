@@ -39,28 +39,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Testimonials data
     const testimonials = [
         {
-            name: 'Dr. Rajesh Kumar',
-            role: 'Director of Innovation',
-            company: 'University of Hyderabad',
-            content: 'Nainovate helped us digitize our entire document management system, transforming how we handle student records and administrative processes. The AI-powered solution has reduced processing time by 60% and significantly improved data accuracy.',
+            name: 'Vamsi',
+            role: 'CEO',
+            company: 'Brillius',
+            content: 'Nainovate helped us digitize our entire document management system, transforming how we handle records and processes. The AI-powered solution has reduced processing time by 60% and significantly improved data accuracy.',
             rating: 5
         },
         {
-            name: 'Priya Sharma',
+            name: 'Amol',
             role: 'CTO',
             company: 'Walnut Medical',
-            content: 'The medical device data digitization platform Nainovate built for us is exceptional. We can now track patient vitals in real-time with 95% accuracy, enabling better healthcare outcomes and streamlined operations across our facilities.',
+            content: 'The medical device data digitization platform Nainovate built for us is exceptional. We can now track patient vitals in real-time with 95% accuracy, enabling better healthcare outcomes and streamlined operations.',
             rating: 5
         },
         {
-            name: 'Alex Thompson',
-            role: 'Head of Operations',
-            company: 'Nerulus',
-            content: 'Working with Nainovate on our AI transformation has been game-changing. Their expertise in machine learning helped us automate critical processes, resulting in 40% cost reduction and improved service delivery to our clients.',
+            name: 'Sai',
+            role: 'Founder',
+            company: 'Freshbus',
+            content: 'Working with Nainovate on our digital transformation has been game-changing. Their expertise helped us automate critical processes, resulting in 40% cost reduction and improved service delivery to our customers.',
+            rating: 5
+        },
+        {
+            name: 'Surya',
+            role: 'Director',
+            company: 'Advait Homes',
+            content: 'Nainovate\'s innovative solutions transformed our real estate operations. Their AI-driven platform improved our customer engagement by 70% and streamlined our property management processes significantly.',
             rating: 5
         }
     ];
-    
+        
     function loadClientLogos() {
         const logosGrid = document.querySelector('[data-clients-logos]');
         if (!logosGrid) return;
