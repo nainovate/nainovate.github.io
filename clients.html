@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients - Nainovate | Testimonials & Success Stories</title>
+    <meta name="description" content="Hear from our satisfied clients. Read testimonials and success stories from businesses we've helped transform with AI and digital solutions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#9333EA',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Theme initialization -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        })();
+    </script>
+</head>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors overflow-x-hidden">
+    
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-600/10 to-blue-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Our <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Clients</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Building lasting partnerships with industry leaders and innovative businesses worldwide
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Testimonial -->
+    <section class="py-20 bg-white dark:bg-black">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-4">
+                <svg class="w-16 h-16 text-primary-600 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+            </div>
+            <blockquote class="text-2xl md:text-3xl font-light text-center text-gray-700 dark:text-gray-300 mb-8">
+                "Nainovate's GenAI solution transformed our customer service operations. We've seen a <span class="font-semibold text-primary-600">70% reduction</span> in response times and our customer satisfaction scores have never been higher. They're not just vendors, they're true partners in innovation."
+            </blockquote>
+        </div>
+    </section>
+    
+    <!-- Client Logos Grid -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by Industry Leaders</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400">
+                Partnering with forward-thinking organizations across the globe
+            </p>
+            </div>
+
+            <!-- Logo Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-12 gap-x-8 items-center justify-center" data-clients-logos>
+            <!-- Logos will load dynamically here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Grid -->
+    <section class="py-20 bg-white dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Real feedback from real businesses</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-testimonials-grid>
+                <!-- Testimonial cards will be loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Testimonials -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories in Their Words</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Watch our clients share their transformation journey</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="relative rounded-2xl overflow-hidden bg-gray-900 aspect-video group cursor-pointer">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-semibold text-lg mb-1">MedTech Innovations</h3>
+                        <p class="text-white/80 text-sm">How AI helped save 10,000+ lives</p>
+                    </div>
+                </div>
+                
+                <div class="relative rounded-2xl overflow-hidden bg-gray-900 aspect-video group cursor-pointer">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <h3 class="text-white font-semibold text-lg mb-1">RetailMax</h3>
+                        <p class="text-white/80 text-sm">3x growth with digital transformation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partnership Benefits -->
+    <section class="py-20 bg-white dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Clients Choose Nainovate</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Our commitment to excellence sets us apart</p>
+            </div>
+
+            <!-- Centered Grid for 3 Cards -->
+            <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rapid Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Fast implementation without compromising quality</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Dedicated Support</h3>
+                    <p class="text-gray-600 dark:text-gray-400">24/7 support from our expert team</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-blue-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zM13 19v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2h2a2 2 0 002-2zM21 19v-8a2 2 0 00-2-2h-2a2 2 0 00-2 2v8a2 2 0 002 2h2a2 2 0 002-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Measurable ROI</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Average 300% ROI within first year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Client Stats
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" data-counter="50">0</div>
+                    <div class="text-white/80">Global Clients</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" data-counter="98">0</div>
+                    <div class="text-white/80">Client Retention %</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" data-counter="15">0</div>
+                    <div class="text-white/80">Countries Served</div>
+                </div>
+                <div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" data-counter="95">0</div>
+                    <div class="text-white/80">NPS Score</div>
+                </div>
+            </div>
+        </div>
+    </section>
+     -->
+    <!-- CTA Section -->
+    <section class="py-20 md:py-32 bg-gradient-to-r from-primary-600 to-blue-600 text-white relative overflow-hidden">
+        <!-- Overlay for better contrast -->
+        <div class="absolute inset-0 bg-black/20"></div>
+
+        <!-- Main Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-animate="fade-in">
+                Join Our Growing List of Success Stories
+            </h2>
+
+            <!-- Subheading -->
+            <p class="text-xl mb-8 text-white/90" data-animate="fade-in">
+                Let's discuss how we can help transform your business
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-in">
+                <a href="contact.html" 
+                class="px-8 py-4 bg-white text-primary-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Become a Client
+                </a>
+                <a href="case-studies.html" 
+                class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300">
+                    View Case Studies
+                </a>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/simple.js"></script>
+    <script src="assets/js/clients-page.js"></script>
+
+    <!-- Load Navigation Component -->
+    <script src="assets/components/navigation.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+    <script src="assets/components/footer.js"></script>
+    <script src="assets/components/whatsapp-float.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navContainer = document.getElementById('navigation-container');
+            if (navContainer && typeof Navigation !== 'undefined') {
+                navContainer.innerHTML = Navigation.render('clients');
+                ComponentsLoader.initializeEventListeners();
+            }
+
+            // Load Footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof Footer !== 'undefined') {
+                footerContainer.innerHTML = Footer.render();
+            }
+            
+            // Load WhatsApp Float
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer && typeof WhatsAppFloat !== 'undefined') {
+                whatsappContainer.innerHTML = WhatsAppFloat.render();
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Container -->
+    <div id="whatsapp-container"></div>
+    
+</body>
+</html>

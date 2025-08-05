@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Case Study - Nainovate</title>
+    <meta name="description" content="" id="page-description">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#9333EA',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Theme initialization -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        })();
+    </script>
+</head>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors overflow-x-hidden">
+    
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+    
+    <!-- Dynamic Content Container -->
+    <div id="case-study-content">
+        <!-- Content will be loaded here dynamically -->
+    </div>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/simple.js"></script>
+    <script src="assets/js/case-study-detail.js"></script>
+
+    <!-- Load Navigation Component -->
+    <script src="assets/components/navigation.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+    <script src="assets/components/footer.js"></script>
+    <script src="assets/components/whatsapp-float.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navContainer = document.getElementById('navigation-container');
+            if (navContainer && typeof Navigation !== 'undefined') {
+                navContainer.innerHTML = Navigation.render('case-studies');
+                ComponentsLoader.initializeEventListeners();
+            }
+
+            // Load Footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof Footer !== 'undefined') {
+                footerContainer.innerHTML = Footer.render();
+            }
+
+            // Load WhatsApp Float
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer && typeof WhatsAppFloat !== 'undefined') {
+                whatsappContainer.innerHTML = WhatsAppFloat.render();
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Container -->
+    <div id="whatsapp-container"></div>
+</body>
+</html>
