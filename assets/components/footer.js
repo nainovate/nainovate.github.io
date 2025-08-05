@@ -3,11 +3,12 @@ const Footer = {
     render: () => {
         return `
             <!-- Footer -->
-            <footer class="bg-black text-white py-12 md:py-16">
+            <footer class="bg-black dark:bg-white text-white dark:text-black py-12 md:py-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <div class="md:col-span-2">
-                            <img src="assets/images/logo/logo-dark.svg" alt="Nainovate" class="h-10 mb-4">
+                            <img src="assets/images/logo/logo-dark.svg" alt="Nainovate" class="h-10 mb-4 block dark:hidden">
+                            <img src="assets/images/logo/logo-light.svg" alt="Nainovate" class="h-10 mb-4 hidden dark:block">
                             <p class="text-gray-400 mb-4">
                                 Pioneering excellence in digital and AI transformation. Empowering businesses with cutting-edge Generative AI solutions.
                             </p>
