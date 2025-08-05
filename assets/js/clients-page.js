@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const testimonials = [
         {
             name: 'Vamsi',
-            role: 'CEO',
+            role: 'COO',
             company: 'Brillius',
             content: 'Nainovate helped us digitize our entire document management system, transforming how we handle records and processes. The AI-powered solution has reduced processing time by 60% and significantly improved data accuracy.',
             rating: 5
@@ -54,14 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         // {
         //     name: 'Sai',
-        //     role: 'Founder',
+        //     role: 'CTO',
         //     company: 'Freshbus',
         //     content: 'Working with Nainovate on our digital transformation has been game-changing. Their expertise helped us automate critical processes, resulting in 40% cost reduction and improved service delivery to our customers.',
         //     rating: 5
         // },
         {
             name: 'Surya',
-            role: 'Director',
+            role: 'CFO',
             company: 'Advait Homes',
             content: 'Nainovate\'s innovative solutions transformed our real estate operations. Their AI-driven platform improved our customer engagement by 70% and streamlined our property management processes significantly.',
             rating: 5
