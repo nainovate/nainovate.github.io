@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             {
                 name: 'tek',
-                logoLight: 'assets/images/clients/teklogo.png',
-                logoDark: 'assets/images/clients/teklogo.png'
+                logoLight: 'assets/images/clients/teklogo.svg',
+                logoDark: 'assets/images/clients/teklogo.svg'
             },
             {
                 name: 'University',
-                logoLight: 'assets/images/clients/university_of_Hyderabad.png',
-                logoDark: 'assets/images/clients/university_of_Hyderabad.png'
+                logoLight: 'assets/images/clients/university of Hyderabad.png',
+                logoDark: 'assets/images/clients/university of Hyderabad.png'
             },
             {
                 name: 'unt',
