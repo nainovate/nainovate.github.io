@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 bg-${service.color}-100 dark:bg-${service.color}-900/30 
                                       rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-4 h-4 text-${service.color}-600 dark:text-${service.color}-400">
+                                <svg class="w-4 h-4 text-${service.color}-600 dark:text-${service.color}-400" viewBox="0 0 24 24">
                                     <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                                 </svg>
                             </div>
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <ul class="space-y-2">
                     ${service.benefits.map(benefit => `
                         <li class="flex items-center gap-2">
-                            <svg class="w-5 h-5 text-${service.color}-600 dark:text-${service.color}-400 flex-shrink-0">
+                            <svg class="w-5 h-5 text-${service.color}-600 dark:text-${service.color}-400 flex-shrink-0" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
                             <span>${benefit}</span>
