@@ -34,7 +34,7 @@ const Footer = {
                             <ul class="space-y-2 text-gray-400">
                                 <li>Hyderabad, India</li>
                                 <li><a href="mailto:info@nainovate.com" class="hover:text-white transition-colors">info@nainovate.com</a></li>
-                                <li><a href="tel:+911234567890" class="hover:text-white transition-colors">+91 123 456 7890</a></li>
+                                <li><a href="tel:+91 9886772888" class="hover:text-white transition-colors">+91 9886772888</a></li>
                             </ul>
                         </div>
                     </div>
