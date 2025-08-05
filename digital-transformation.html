@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Transformation Services - Nainovate</title>
+    <meta name="description" content="Transform your business with our comprehensive digital transformation services including Cloud Computing, Data Analytics, DevOps, Mobile Development, Custom Software, and Web Development.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#9333EA',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .service-content {
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .service-btn[data-active="true"] {
+            background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
+            color: white;
+        }
+        
+        .service-btn[data-active="true"] .icon-bg {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .service-btn[data-active="true"] .icon-color {
+            color: white;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .animate-slide-in {
+            animation: slideInRight 0.5s ease-out;
+        }
+    </style>
+    
+    <!-- Theme initialization -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        })();
+    </script>
+</head>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors overflow-x-hidden">
+    
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-600/10 to-blue-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+                Digital <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Transformation</span>
+            </h1>
+            <p class="text-xl md:text-1xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                In the digital age, where technology is rapidly evolving, businesses must adapt to stay ahead of the curve. 
+                Nainovate is a leading provider of cutting-edge digital transformation services, offering a comprehensive 
+                suite of solutions to help organizations harness the power of technology and drive success.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Interactive Services Showcase -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Our Services</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Select a service to explore how we can transform your business
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-5 gap-8 xl:gap-12 items-start">
+                <!-- Left: Service Selector -->
+                <div class="lg:col-span-2 space-y-3" id="service-selector">
+                    <!-- Service buttons will be rendered here by JavaScript -->
+                </div>
+                
+                <!-- Right: Dynamic Content Area -->
+                <div class="lg:col-span-3">
+                    <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 
+                                rounded-3xl shadow-2xl p-8 md:p-12 min-h-[650px] relative overflow-hidden"
+                         id="service-display">
+                        <!-- Background decoration -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-600/10 to-blue-600/10 rounded-full blur-3xl"></div>
+                        
+                        <!-- Service content will be rendered here by JavaScript -->
+                        <div id="service-content" class="relative z-10">
+                            <!-- Content loads here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Transform Your Business?
+            </h2>
+            <p class="text-xl mb-8 text-white/90">
+                Let's discuss how our digital transformation services can help you achieve your goals
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-white text-primary-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Get Started
+                </a>
+                <a href="case-studies.html" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300">
+                    View Case Studies
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- JavaScript -->
+    <script src="assets/js/simple.js"></script>
+    <script src="assets/js/digital-transformation.js"></script>
+
+    <!-- Load Navigation Component -->
+    <script src="assets/components/navigation.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+    <script src="assets/components/footer.js"></script>
+    <script src="assets/components/whatsapp-float.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navContainer = document.getElementById('navigation-container');
+            if (navContainer && typeof Navigation !== 'undefined') {
+                navContainer.innerHTML = Navigation.render('digital-transformation');
+                ComponentsLoader.initializeEventListeners();
+            }
+            // Load Footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof Footer !== 'undefined') {
+                footerContainer.innerHTML = Footer.render();
+            }
+            
+            // Load WhatsApp Float
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer && typeof WhatsAppFloat !== 'undefined') {
+                whatsappContainer.innerHTML = WhatsAppFloat.render();
+            }
+        });
+    </script>
+
+    <!-- WhatsApp Float Container -->
+    <div id="whatsapp-container"></div>
+
+</body>
+</html>

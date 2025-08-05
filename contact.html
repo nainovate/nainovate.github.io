@@ -1,424 +1,351 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <!-- Required Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
-    <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css" />
-    <!-- Animate Min CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
-    <!-- Boxicons CSS -->
-    <link rel="stylesheet" href="assets/css/boxicons.min.css" />
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="assets/fonts/flaticon.css" />
-    <!-- Meanmenu CSS -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-    <!-- Title -->
-    <title>Nainovate Technologies </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nainovate | Get in Touch</title>
+    <meta name="description" content="Contact Nainovate for AI and digital transformation solutions. Schedule a consultation, get a quote, or learn more Clients our services.">
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/favicons/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#9333EA',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Theme initialization -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        })();
+    </script>
 </head>
-
-<body>
-    <!-- Start Preloader -->
-    <div class="preloader">
-        <div class="preloader-wave"></div>
-    </div>
-    <!-- End Preloader -->
-
-    <!-- Start Navbar Area -->
-    <div class="navbar-area">
-        <!-- Menu For Mobile Device -->
-        <div class="mobile-nav">
-            <a href="index.html" class="logo">
-                <div class="logo-container">
-                    <img src="assets/img/logo.gif" alt="Nainovate logo">
-                </div>
-            </a>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors overflow-x-hidden">
+    
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-600/10 to-blue-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
         </div>
-
-        <!-- Menu For Desktop Device -->
-        <div class="main-nav top-nav">
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index.html">
-                        <div class="logo-container">
-                            <img src="assets/img/logo.gif" alt="Nainovate logo">
-                        </div>
-                    </a>
-                    <a class="navbar-brand-sticky" href="index.html">
-                        <div class="logo-container-sticky">
-                            <img src="assets/img/logo.gif" alt="Nainovate logo">
-                        </div>
-                    </a>
-
-                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                        <ul class="navbar-nav m-auto">
-                            <li class="nav-item">
-                                <a href="index.html#index" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Services</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="index.html#DigitalTansformations"
-                                            class="nav-link">Digital Tansformations</a></li>
-                                    <li class="nav-item"><a href="index.html#AITransformation" class="nav-link">AI
-                                            Tansformations</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.html#GenAI" class="nav-link">GenAI</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="case-study.html" class="nav-link">
-                                    Case Studies
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.html#OurClients" class="nav-link">Clients</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contact.html" class="nav-link active">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </nav>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Get in <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Touch</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Ready to transform your business with AI? Let's discuss how we can help you achieve your goals
+                </p>
             </div>
-        </div>
-
-    </div>
-    <!-- End Navbar Area -->
-
-    <!-- Inner Banner -->
-    <div class="inner-banner inner-bg6 d-none">
-        <div class="container">
-            <div class="inner-title text-center">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    <li><i class='bx bxs-chevrons-right'></i>
-                    </li>
-                    <li>Contact</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- Inner Banner End -->
-    <!-- Contact Area -->
-    <div class="contact-area pt-100 pb-70 d-none">
-        <div class="container contact-width">
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="contact-card"><i class='flaticon-call'></i>
-                        <ul>
-                            <li><a href="tel:+1123456789">
-                                    +1 1234 56 789 </a>
-                            </li>
-                            <li><a href="tel:+19876543210">
-                                    +1 9876 543 210 </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="contact-card"><i class="flaticon-paper-plane"></i>
-                        <ul>
-                            <li><a href="mailto:sales@nainovate.com">sales@nainovate.com</a>
-                            </li>
-                            <li><a href="mailto:hello@nainovate.com">hello@nainovate.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 offset-sm-3 offset-lg-0">
-                    <div class="contact-card"><i class='flaticon-pin'></i>
-                        <ul>
-                            <li>
-                                28/A Street, New York, USA
-                            </li>
-                            <li>
-                                48/C Street, New York, USA
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact Area End -->
-    <!-- Contact Section -->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Style The Contact Form How Ever You Prefer -->
-    <section class="contact-section pb-100 ">
-        <div class="container">
-            <div class="section-title text-center"><span>Contact Us</span>
-                <h2>Learn more about Nainovate Technologies?</h2>
-                <p>Your contact is valuable to us. If you want to try out our solutions, ask a demo or request more use
-                    cases, discuss collaboration or partnership, we&rsquo;re more than happy to get in touch.</p>
-            </div>
-            <div class="contact-wrap pt-45">
-                <div class="contact-wrap-form">
-                    <form id="gform" method="POST"
-                        action="https://script.google.com/macros/s/AKfycbx2KVupzaKETwfbq6jchbfecR6RdDN1EHLGTG3LovptB1j1vFyzTRVbzu0l0hd65na_/exec">
-                        <!-- change the form action to your script url -->
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="text" id="name" name="name" class="form-control"
-                                        data-error="Please enter your name" placeholder="Your Name" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="number" name="phone_number" id="phone_number" required
-                                        data-error="Please enter your number" class="form-control"
-                                        placeholder="Your Phone" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" class="form-control" required
-                                        data-error="Please enter your email" placeholder="Your Email" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <input type="msg_subject" name="msg_subject" id="msg_subject" class="form-control"
-                                        required data-error="Please enter your subject" placeholder="Your Subject" />
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="8"
-                                        required data-error="Write your message" placeholder="Your Message"></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group honeypot-field">
-                                    <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden
-                                        text field; must be empty to submit the form! Otherwise, we assume the user is a
-                                        spam bot.</label>
-                                    <input id="honeypot" type="text" name="honeypot" value="" />
-                                </div>
-                            </div>
-
-                            <button class="button-success  form-group">
-                                <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-                        </div>
-
-                        <!-- Customise the Thankyou Message People See when they submit the form: -->
-                        <div class="thankyou_message" style="display:none;">
-                            <h2><em>Thanks</em> for contacting us!
-                                We will get back to you soon!</h2>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
-    <!-- Contact Section End -->
-
-
-    <!-- Footer Area -->
-    <footer id="footer" class="footer-area bg-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class=" col-lg-3 col-md-6">
-                        <div class="footer-list ml-50">
-                            <h3>company</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="index.html">About Us</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="team.html">Team</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="careers.html">Careers</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="contact.html"> Contact</a>
-                                </li>
-
-                            </ul>
-                        </div>
+    
+    <!-- Contact Options -->
+    <section class="py-12 bg-white dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary-600 to-blue-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
                     </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-list">
-                            <h3>Digital Tansformations</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="cloud-services.html">Cloud Services</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="data-analytics.html">Data Analytics</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="devops.html">DevOps</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="mobile-application.html">Mobile Application Development</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="software-development.html">Custom Software Development</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="e-services.html">E-Services</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-list">
-                            <h3>AI Tansformations</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="machine-learning.html">Machine Learning</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="computer-vision.html">Computer Vision</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="generative-AI.html">Generative AI</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6">
-                        <div class="footer-list ml-20">
-                            <h3>Legal</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="privacy-policy.html">Privacy</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="terms-condition.html">Terms</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="security.html">Security</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-
+                    <h3 class="text-xl font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Get in touch via email</p>
+                    <a href="mailto:info@nainovate.com" class="text-primary-600 dark:text-primary-400 hover:underline">info@nainovate.com</a>
                 </div>
-                <div class="row">
-                    <!-- Contact Us Column -->
-                    <div class="col-lg-6 col-md-6 order-1 order-md-1 d-flex">
-                        <div class="footer-single">
-                            <div class="footer-single-content">
-                                <p>Contact us at</p>
-                                <p><span class="text-black fs-3">info@nainovate.com</span></p>
-                            </div>
-                        </div>
-                    </div>
                 
-                    <!-- Office Address Column -->
-                    <div class="col-lg-6 col-md-6 order-2 order-md-2">
-                        <div class="footer-single text-md-end text-start">
-                            <div class="footer-single-content">
-                                <p>
-                                    Office Address
-                                    <a href="https://maps.google.com/?q=Sri+Harsha+icon,+Nanakramguda,+Hyderabad,+500032" target="_blank">
-                                        <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Google Maps" style="width: 20px; margin-left: 5px; margin-top: 15px;" />
-                                    </a>
-                                </p>
-                                <p><span class="text-black fs-5">Harsha icon, 11th Floor<br>Nanakramguda, Hyderabad, 500032</span></p>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Mon-Fri 9:00 AM - 6:00 PM IST</p>
+                    <a href="tel:+911234567890" class="text-primary-600 dark:text-primary-400 hover:underline">+91 123 456 7890</a>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center text-white mb-4 mx-auto">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Visit Us</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-2">Our headquarters</p>
+                    <address class="not-italic text-primary-600 dark:text-primary-400">Hyderabad, India</address>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Form Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Form -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-6">Send Us a Message</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    First Name <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="first-name" name="first-name" required
+                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                    Last Name <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="last-name" name="last-name" required
+                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Company
+                            </label>
+                            <input type="text" id="company" name="company"
+                                class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Service Interested In
+                            </label>
+                            <select id="service" name="service"
+                                class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200">
+                                <option value="">Select a service</option>
+                                <option value="genai">Generative AI Solutions</option>
+                                <option value="ml">Machine Learning</option>
+                                <option value="cv">Computer Vision</option>
+                                <option value="cloud">Cloud Computing</option>
+                                <option value="data">Data Analytics</option>
+                                <option value="custom">Custom Software Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                                Message <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+                                placeholder="Tell us Clients your project..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="privacy" name="privacy" required
+                                class="w-4 h-4 text-primary-600 bg-gray-100 border-gray-300 rounded focus:ring-primary-500">
+                            <label for="privacy" class="ml-2 text-sm text-gray-600 dark:text-gray-400">
+                                I agree to the <a href="#" class="text-primary-600 hover:underline">privacy policy</a> <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit"
+                            class="w-full px-8 py-4 bg-gradient-to-r from-primary-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-400 dark:border-green-600 rounded-lg">
+                        <p class="text-green-700 dark:text-green-400">Thank you for your message! We'll get back to you within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <!-- Info Panel -->
+                <div class="lg:pl-8">
+                    <h2 class="text-3xl font-bold mb-6">Let's Start a Conversation</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                        Whether you have a specific project in mind or just want to explore how AI can transform your business, we're here to help. Our team of experts is ready to discuss your needs and provide tailored solutions.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-600 mt-1 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold mb-1">Quick Response</h3>
+                                <p class="text-gray-600 dark:text-gray-400">We typically respond within 24 hours during business days</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-600 mt-1 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold mb-1">Free Consultation</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Initial consultation to understand your needs at no cost</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-600 mt-1 mr-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold mb-1">100% Confidential</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Your information is secure and never shared without consent</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-sm-8 col-md-6 text-center text-md-start">
-                        <div class="logo-container" style="font-family: 'Kusanagi';color: #222222;">
-                            <img src="assets/img/logo.gif" alt="Nainovate logo">
+                    
+                    <!-- Office Location -->
+                    <div class="bg-gradient-to-br from-primary-600/10 to-blue-600/10 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4">Office Location</h3>
+                        <div class="rounded-lg mb-4 overflow-hidden" style="height: 400px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121826.27689281755!2d78.27798406762885!3d17.408372669616604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb952200059677%3A0xac28e1d107bc3e57!2sAVK%20SRI%20Harsha%20Icon!5e0!3m2!1sen!2sin!4v1753865250238!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-
-                    </div>
-                    <div class="col-12 col-sm-8 col-md-6">
-                        <p class="fs--1 text-dark my-2 text-center text-md-end">© Nainovate Technologies Private
-                            Limited.
-                            All rights reserved. </p>
-                        <p class="fs--1 text-dark my-2 text-center text-md-end">Our work is protected by patents.</p>
+                        <address class="not-italic text-gray-600 dark:text-gray-400">
+                            <strong>Nainovate Technologies</strong><br>
+                            HITEC City, Cyberabad<br>
+                            Hyderabad, Telangana 500081<br>
+                            India
+                        </address>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- Footer Area End -->
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white dark:bg-black">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-6" data-faq>
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                    <button class="w-full text-left flex items-center justify-between font-semibold text-lg" data-faq-toggle>
+                        How long does a typical project take?
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-400 hidden" data-faq-content>
+                        Project timelines vary based on complexity and scope. Simple integrations can be completed in 4-6 weeks, while comprehensive AI transformations typically take 3-6 months. We provide detailed timelines during the initial consultation.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                    <button class="w-full text-left flex items-center justify-between font-semibold text-lg" data-faq-toggle>
+                        Do you work with small businesses?
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-400 hidden" data-faq-content>
+                        Yes! We work with businesses of all sizes. Our solutions are scalable and can be tailored to fit different budgets and requirements. We offer starter packages specifically designed for small and medium businesses.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                    <button class="w-full text-left flex items-center justify-between font-semibold text-lg" data-faq-toggle>
+                        What industries do you specialize in?
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-400 hidden" data-faq-content>
+                        We have extensive experience across multiple industries including banking & finance, healthcare, retail, manufacturing, logistics, and technology. Our solutions are designed to be industry-agnostic while addressing specific sector challenges.
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
+                    <button class="w-full text-left flex items-center justify-between font-semibold text-lg" data-faq-toggle>
+                        How do you ensure data security?
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="mt-4 text-gray-600 dark:text-gray-400 hidden" data-faq-content>
+                        Security is our top priority. We follow industry best practices including end-to-end encryption, secure cloud infrastructure, regular security audits, and compliance with GDPR, HIPAA, and other relevant regulations. All our team members sign strict NDAs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- Load Components -->
+    <script src="assets/components/navigation.js"></script>
+    <script src="assets/components/footer.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+    <script src="assets/components/whatsapp-float.js"></script>
+    <script src="assets/js/simple.js"></script>
+    <script src="assets/js/contact-page.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load Navigation
+            const navContainer = document.getElementById('navigation-container');
+            if (navContainer && typeof Navigation !== 'undefined') {
+                navContainer.innerHTML = Navigation.render('contact'); // Change page name accordingly
+            }
+            
+            // Load Footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof Footer !== 'undefined') {
+                footerContainer.innerHTML = Footer.render();
+            }
+            
+            // Load WhatsApp Float
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer && typeof WhatsAppFloat !== 'undefined') {
+                whatsappContainer.innerHTML = WhatsAppFloat.render();
+            }
+            // Initialize event listeners
+            ComponentsLoader.initializeEventListeners();
+        });
+    </script>
 
-    <!-- Jquery Min JS -->
-    <script src="assets/js/jquery-3.5.0.min.js"></script>
-    <!-- Bootstrap Bundle Min JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Meanmenu JS -->
-    <script src="assets/js/meanmenu.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Wow JS -->
-    <script src="assets/js/wow.min.js"></script>
-    <!-- Ajaxchimp Min JS -->
-    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-    <!-- Form Validator Min JS -->
-    <script src="assets/js/form-validator.min.js"></script>
-    <!-- Contact Form JS -->
-    <script data-cfasync="false" type="text/javascript" src="assets/js/form-submission-handler.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/custom.js"></script>
+    <!-- WhatsApp Float Container -->
+    <div id="whatsapp-container"></div>
+    
 </body>
-
 </html>

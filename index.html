@@ -1,1131 +1,542 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
-    <!-- Required Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png" />
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico" />
-    <link rel="manifest" href="assets/img/favicons/manifest.json" />
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png" />
-    <meta name="theme-color" content="#ffffff" />
-
-
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <!-- Animate Min CSS -->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <!-- Boxicons CSS -->
-    <link rel="stylesheet" href="assets/css/boxicons.min.css">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="assets/fonts/flaticon.css">
-    <!-- Meanmenu CSS -->
-    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Responsive CSS -->
-
-    <link rel="stylesheet" href="assets/css/responsive.css">
-
-    <!-- Title -->
-    <title>Nainovate Technologies</title>
+    <title>Nainovate - Pioneering Excellence in AI & Digital Transformation</title>
+    <meta name="description" content="Transform your business with cutting-edge Generative AI solutions. Nainovate leads in AI transformation, machine learning, and digital innovation.">
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#9333EA',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Theme initialization (prevent flash) -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        })();
+    </script>
+    
+    <!-- GSAP for premium animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-
-<body>
-    <!-- Start Preloader -->
-    <div class="preloader">
-        <div class="preloader-wave"></div>
-    </div>
-    <!-- End Preloader -->
-
-    <!-- Start Navbar Area -->
-    <div class="navbar-area">
-        <!-- Menu For Mobile Device -->
-        <div class="mobile-nav">
-            <a href="index.html" class="logo">
-                <div class="logo-container">
-                    <img src="assets/img/logo.gif" alt="Nainovate logo">
-                </div>
-            </a>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors overflow-x-hidden">
+    
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-600/10 via-transparent to-blue-600/10 animate-gradient bg-[length:200%_200%]"></div>
+            <canvas id="particles" class="absolute inset-0 opacity-30"></canvas>
         </div>
-
-        <!-- Menu For Desktop Device -->
-        <div class="main-nav top-nav">
-            <div class="container">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index.html">
-                        <div class="logo-container">
-                            <img src="assets/img/logo.gif" alt="Nainovate logo">
-                        </div>
-                    </a>
-                    <a class="navbar-brand-sticky" href="index.html">
-                        <div class="logo-container-sticky">
-                            <img src="assets/img/logo.gif" alt="Nainovate logo">
-                        </div>
-                    </a>
-
-                    <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                        <ul class="navbar-nav m-auto">
-                            <li class="nav-item">
-                                <a href="index.html#index" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link">Services</a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item"><a href="index.html#DigitalTansformations"
-                                            class="nav-link active">Digital Tansformations</a></li>
-                                    <li class="nav-item"><a href="index.html#AITransformation"
-                                            class="nav-link active">AI Tansformations</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.html#GenAI" class="nav-link">GenAI</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="case-study.html" class="nav-link">
-                                    Case Studies
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="index.html#OurClients" class="nav-link">Clients</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="contact.html" class="nav-link">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </nav>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 animate-fade-in-up">
+                Pioneering <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">AI Innovation</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">
+                Transform your business with cutting-edge Generative AI solutions that drive real results
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-up" style="animation-delay: 0.4s">
+                <a href="ai-solutions.html" class="px-8 py-4 bg-gradient-to-r from-primary-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Explore AI Solutions
+                </a>
+                <a href="case-studies.html" class="px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-700 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                    View Case Studies
+                </a>
             </div>
         </div>
-
-    </div>
-    <!-- End Navbar Area -->
-
-    <!-- Main Banner -->
-    <div class="main-banner" id="index">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="banner-text" style="padding-top: 30%;">
-                        <!-- <span>Search Engine Optimization</span> -->
-                        <h2>Revolutionizing Decision-Making Processes By GenAI Services: Pioneering Excellence in
-                            Digital and AI Transformation at Nainovate</h2>
-                        <p>Embarking on a transformative journey in digital and AI excellence, Nainovate pioneers a
-                            new era in decision-making, leveraging the advanced capabilities of the GenAI service. Our
-                            vision is to embolden businesses with confidence, catalyzing strategic
-                            initiatives and cultivating innovation across multifaceted domains.&nbsp;
-                        </p>
-
-                        <div class="banner-btn">
-                            <a href="contact.html" class="default-btn">Contact Us</a>
-                            <a href="index.html#GenAI" class="default-btn active">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="banner-img">
-                        <img src="assets/img/img/globe.jpg" alt="Banner Images">
-                    </div>
-                </div>
-                <!-- <div class="banner-shape-1">
-                        <img src="assets/img/img/Asset 1@4x 1.png" alt="Banner Shape">
-                    </div> -->
-            </div>
-        </div>
-        <div class="home-shape">
-            <div class="shape1">
-                <img src="assets/img/shape/1.png" alt="shape">
-            </div>
-            <div class="shape2">
-                <img src="assets/img/shape/2.png" alt="shape">
-            </div>
-            <div class="shape3">
-                <img src="assets/img/shape/3.png" alt="shape">
-            </div>
-            <div class="shape4">
-                <img src="assets/img/shape/4.png" alt="shape">
-            </div>
-            <div class="shape5">
-                <img src="assets/img/shape/5.png" alt="shape">
-            </div>
-            <div class="shape6">
-                <img src="assets/img/shape/6.png" alt="shape">
-            </div>
-            <div class="shape7">
-                <img src="assets/img/shape/3.png" alt="shape">
-            </div>
-        </div>
-    </div>
-    <!-- Main Banner End -->
-
-    <!-- Digital Transformations -->
-    <section class="service-area pb-70" id="DigitalTansformations" style="padding-bottom:0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 mx-auto text-center mb-3">
-                    <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Digital Transformations</h5>
-                    <p class="mb-5">In the digital age, where technology is rapidly evolving, businesses must
-                        adapt to stay ahead of the curve. Nainovate is a leading provider of cutting-edge digital
-                        transformation services, offering a comprehensive suite of solutions to help organizations
-                        harness the power of technology and drive success in an increasingly competitive landscape.
-                    </p>
-                    <p class="mb-2"><span style="font-size: 1rem;">Our services encompass a wide range of offerings,
-                            empowering businesses to streamline operations, enhance customer experiences, and unlock new
-                            opportunities for growth. Whether it's leveraging the flexibility of cloud computing,
-                            harnessing the insights of data analytics, or developing tailored software solutions,
-                            Nainovate is your trusted in navigating the digital transformation journey.</span></p>
-                </div>
-            </div>
-            <div class="row pt-45">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" onclick="navigateToCloudServices()"
-                        style="height: 380px; max-height: 380px;">
-                        <a>
-                            <img src="assets/img/index/pngs/cloud-services.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Cloud Services</h3>
-                        </a>
-                        <p>
-                            Leverage the power of cloud computing with our cloud migration, infrastructure management,
-                            and application development services. We provide tailored cloud solutions that enable
-                            scalability, reliability, and cost-efficiency.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" onclick="navigateToDataAnalytics()"
-                        style="height: 380px; max-height: 380px;">
-                        <a>
-                            <img src="assets/img/index/pngs/data-analytics.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Data Analytics</h3>
-                        </a>
-                        <p>
-                            Gain valuable insights from your data with our data mining, predictive modeling, and
-                            business
-                            intelligence services. We help you extract actionable insights to drive informed decisions
-                            and growth.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card p-4" style="height: 380px; max-height: 380px;"
-                        onclick="navigateToDevOps()">
-                        <a>
-                            <img src="assets/img/index/pngs/devops.png" alt="Images" class="w-25"
-                                style="padding-top: 25px;">
-                        </a>
-                        <a>
-                            <h3>DevOps</h3>
-                        </a>
-                        <p>
-                            We implement DevOps practices, automate software delivery processes, and foster a CI/CD
-                            culture for
-                            faster time-to-market, improved quality, and increased operational efficiency.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 380px; max-height: 380px;">
-                        <a>
-                            <img src="assets/img/index/pngs/modile-development.png" alt="Images" class="w-25"
-                                onclick="navigateToMobileApplication()">
-                        </a>
-                        <a>
-                            <h3>Mobile Application Development</h3>
-                        </a>
-                        <p>
-                            Stay ahead in the mobile-centric world with our innovative and user-friendly mobile
-                            applications for iOS and Android platforms, designed to enhance user experiences and
-                            customer engagement.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 380px; max-height: 380px;"
-                        onclick="navigateToSoftwareDevelopment()">
-                        <a>
-                            <img src="/assets/img/index/pngs/software-development.png" alt="Images" class="w-25"
-                                style="padding-top: 10px;">
-                        </a>
-                        <a>
-                            <h3>Custom Software Development</h3>
-                        </a>
-                        <p>
-                            Our skilled developers deliver bespoke software solutions tailored to your unique business
-                            needs,
-                            streamlining processes, automating tasks, and improving operational efficiency.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 380px; max-height: 380px;" onclick="navigateToEservice()">
-                        <a>
-                            <img src="assets/img/index/pngs/e-services.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>E-Services</h3>
-                        </a>
-                        <p>
-                            We offer end-to-end solutions for web development, e-commerce platforms, online portals.
-                            Our expertise ensures an engaging and optimized online presence for your business.
-                        </p>
-                    </div>
-                </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in" style="animation-delay: 0.8s">
+            <div class="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full p-1">
+                <div class="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mx-auto animate-bounce"></div>
             </div>
         </div>
     </section>
-    <!-- End of Digital Transformations -->
-
-    <!-- AI Transformation -->
-    <section class="service-area pb-70" id="AITransformation" style="padding-bottom:0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 mx-auto text-center mb-3">
-                    <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">AI Transformations</h5>
-                    <p class="mb-5">In the era of AI innovation, where artificial intelligence is revolutionizing
-                        industries, businesses must embrace AI transformation to thrive in a data-driven world.
-                        Nainovate leads the way as a premier provider of AI transformation services, offering an
-                        extensive range of solutions to empower organizations in leveraging AI's transformative
-                        capabilities and achieving unparalleled success in a competitive landscape.
-                    </p>
-                    <p class="mb-2"><span style="font-size: 1rem;">Our services encompass advanced AI technologies,
-                            enabling businesses to optimize processes, personalize customer interactions, and unlock
-                            unprecedented insights. Whether it's harnessing the potential of machine learning
-                            algorithms, deploying AI-powered automation, or creating custom AI solutions, Nainovate is
-                            your trusted partner in navigating the AI transformation journey.</span></p>
-                </div>
+    
+    <!-- Services Overview -->
+    <section id="services" class="py-20 md:py-32 bg-white dark:bg-black" data-section="services">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-animate="fade-in">
+                    Comprehensive Digital Solutions
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-animate="fade-in">
+                    From cloud infrastructure to AI implementation, we deliver end-to-end transformation
+                </p>
             </div>
-            <div class="row pt-45">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" onclick="navigateToML()" style="height: 510px; max-height: 510px;">
-                        <a>
-                            <img src="assets/img/index/pngs/cloud-services.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Machine Learning (ML) Services</h3>
-                        </a>
-                        <p>
-                            Experience the forefront of business intelligence with Nainovate's comprehensive Machine
-                            Learning (ML) services. From crafting custom ML models to implementing AI-driven automation
-                            and harnessing advanced analytics for actionable insights, we are dedicated to empowering
-                            organizations. Our focus on scalability, reliability, and cost-effectiveness ensures that
-                            businesses can leverage ML to drive innovation, efficiency, and sustainable growth in
-                            today's competitive landscape.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" onclick="navigateToCV()" style="height: 510px; max-height: 510px;">
-                        <a>
-                            <img src="assets/img/index/pngs/data-analytics.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Computer Vision (CV) Services</h3>
-                        </a>
-                        <p>
-                            Discover the cutting-edge possibilities of Computer Vision (CV) with Nainovate's specialized
-                            services. Our CV solutions range from image recognition to video analysis, enabling
-                            businesses to unlock valuable insights and automate processes with precision. Leveraging
-                            advanced algorithms and AI-driven techniques, we deliver tailored CV solutions that drive
-                            innovation, enhance efficiency, and fuel growth in today's dynamic business landscape
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card p-4" style="height: 510px; max-height: 510px;" onclick="navigateToGenAI()">
-                        <a>
-                            <img src="assets/img/index/pngs/devops.png" alt="Images" class="w-25"
-                                style="padding-top: 25px;">
-                        </a>
-                        <a>
-                            <h3>Generative AI (GenAI) Services</h3>
-                        </a>
-                        <p>
-                            Experience the next frontier of AI innovation with Nainovate's Generative AI (GenAI)
-                            services. Our expertise spans from generating creative content to automating complex tasks,
-                            harnessing the power of advanced algorithms and AI techniques. With GenAI, businesses can
-                            unlock new possibilities, drive innovation, and achieve unparalleled efficiency in today's
-                            fast-paced digital landscape.
-                        </p>
-                    </div>
-                </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-services-grid>
+                <!-- Service cards will be dynamically loaded here -->
             </div>
         </div>
     </section>
-    <!-- End of AI Transformation -->
 
 
-    <!-- Gen AI -->
-    <section class="service-area pb-70" id="GenAI" style="padding-bottom:0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 mx-auto text-center mb-3">
-                    <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">The Future of Generative AI</h5>
-                    <p class="mb-5">In the dynamic landscape of AI, Generative AI (GenAI) is poised to revolutionize
-                        knowledge
-                        work by empowering compact devices with enhanced intelligence and capabilities. Gen AI tools
-                        automate
-                        decision-making and collaboration, driving efficiency and reducing the need for human oversight.
-                    </p>
-                    <p class="mb-5"><span style="font-size: 1rem;">GenAI's impact spans diverse solutions, including
-                            automating tasks,
-                            making intelligent decisions, and converting voice to text for seamless communication.
-                            By aligning with various distinct areas, GenAI drives significant advancements in endpoint
-                            AI,
-                            making technology smarter and more accessible across industries.</span></p>
-                </div>
-            </div>
-            <div class="row pt-45">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 400px; max-height: 400px;"
-                        onclick="navigateToDecisionMaking()">
-                        <a>
-                            <img src="assets/img/genAI/pngs/decision_making.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Enhancing Decisions Making</h3>
-                        </a>
-                        <p>
-                            Fine-tuning the LLM model involves customizing models for individual use cases,
-                            optimizing semantic labeling. This approach streamlines decision-making processes
-                            by ensuring precise identification and categorization within the visual data, enhancing
-                            overall efficiency and effectiveness.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card " style="height: 400px; max-height: 400px;"
-                        onclick="navigateToDocumentProcessing()">
-                        <a>
-                            <img src="assets/img/genAI/pngs/document_processing.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Intelligent Document Processing</h3>
-                        </a>
-                        <p>
-                            By combining retrieval and generation techniques, RAG enables comprehensive understanding
-                            and extraction of valuable insights from textual data, empowering informed and efficient
-                            decision-making processes.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card p-4" style="height: 400px; max-height: 400px;"
-                        onclick="navigateToLanguageProcessing()">
-                        <a>
-                            <img src="assets/img/genAI/pngs/language_processing.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Language Processing </h3>
-                        </a>
-                        <p>
-                            Categorize free text into predefined groups for abusive content moderation, tone detection
-                            and more. Answer questions based on the content of a given passage of text.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 400px; max-height: 400px;" onclick="navigateToSTT()">
-                        <a>
-                            <img src="assets/img/genAI/pngs/stt.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Smart Speech-to-Text Translation</h3>
-                        </a>
-                        <p>
-                            Efficiently convert spoken language into accurate text while ensuring high fidelity in
-                            localization
-                            and semantic context. Translate the transcribed text into various languages with precision
-                            and cultural
-                            nuance, enabling seamless communication across diverse linguistic landscapes.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 400px; max-height: 400px;"
-                        onclick="navigateToSmartVision()">
-                        <a>
-                            <img src="/assets/img/genAI/pngs/vision.png" alt="Images" class="w-25"
-                                style="padding-top: 25px;">
-                        </a>
-                        <a>
-                            <h3>Smartening Vision</h3>
-                        </a>
-                        <p>
-                            Enhance visual content for Intelligent Vision with image generation and editing. Improve
-                            object
-                            detection and semantic labeling accuracy for diverse elements. Optimize decision-making in
-                            intelligent
-                            systems through advanced imaging techniques.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <div class="service-card" style="height: 400px; max-height: 400px;"
-                        onclick="navigateToPredictiveInsights()">
-                        <a>
-                            <img src="assets/img/genAI/pngs/predict_insights.png" alt="Images" class="w-25">
-                        </a>
-                        <a>
-                            <h3>Predictive Insights</h3>
-                        </a>
-                        <p>
-                            GenAI can predict circumstances leveraging its built-in machine learning capabilities
-                            and pre-trained models. It uses sophisticated
-                            algorithms to analyze patterns, make predictions, and provide insights based on input data,
-                            making it accessible and effective for users without specialized data science knowledge.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <!-- AI Transformations Section -->
+    <section class="py-20 md:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-950 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-600/5 via-blue-600/5 to-pink-600/5 rounded-full blur-3xl"></div>
         </div>
-    </section>
-    <!-- Gen AI Ends -->
-
-    <!-- case-studies slider starts -->
-    <section class="portfolio-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title text-center">
-                <h2>Case-Studies</h2>
-                <!-- <h2>We Have Done Business with Thousand of Comapnies</h2>
-                <p>
-                    It is a long established fact that a reader will be distracted
-                    by the readable content of a page when looking at its layout.
-                </p> -->
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-animate="fade-in">
+                    Transform Your Business with AI
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-animate="fade-in">
+                    Comprehensive AI solutions that drive innovation and growth. From machine learning to generative AI, 
+                    we deliver cutting-edge technology tailored to your needs.
+                </p>
             </div>
-            <div class="portfolio-slider pt-45 owl-carousel owl-theme owl-loaded owl-drag">
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage"
-                        style="transform: translate3d(-1143px, 0px, 0px); transition: all 0.25s ease 0s; width: 3048px;">
-                        <div class="owl-item cloned" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="medical.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/medical.avif);">
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Digitizing Human Vitals Data</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="95"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="13px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">90</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+            
+            <!-- Interactive Boxes -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12" data-ai-services>
+                <!-- Machine Learning Box -->
+                <div class="ai-service-box group relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden">
+                    <!-- Hover Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-primary-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
                         </div>
-                        <div class="owl-item cloned" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="tax.html" class="w-100">
-                                    <div class="blog-card  " style="background-image: url(./assets/img/usecases/tax.gif);">
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Digitizing Tax Filing Processes</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="96"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="2.6px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">98</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="owl-item" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="educational.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/education.jpg);">
-
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Digitizing Document Management</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="93"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="13px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">90</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="owl-item" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="workforceManagement.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/WorkforceManagementSystem.webp);">
-
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Enhancing Workforce Management</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="93"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="6.5px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">95</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="owl-item" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="productCatalogueManagement.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/ProductCatalogueManagement.png);">
-
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Product Catalogue Management</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="93"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="6.5px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">95</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="owl-item" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="optimizingLogisticManagement.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/OptimizingLogisticManagement.jpg);">
-
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Optimizing Logistic Management</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="93"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="2.6px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">98</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="owl-item" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="enhancingRecruitment.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/enhancingRecruitment.jpg);">
-
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Enhancing Recruitment Efficiency</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="93"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="6.5px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">95</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="owl-item" style="width: 351px; margin-right: 30px;">
-                            <div class="">
-                                <a href="defectDetection.html" class="w-100">
-                                    <div class="blog-card  "
-                                        style="background-image: url(./assets/img/usecases/defectDetection.jpg);">
-
-                                        <div class="cardtitle">
-                                            <div class="d-flex flex-no-wrap justify-content-between">
-                                                <div>
-                                                    <div class="v-card__title font-weight-bold pt-1 pb-0 ps-2"
-                                                        style="word-break: normal;">Defect Detection in Manufacturing</div>
-                                                </div>
-                                                <div>
-                                                    <div class="v-card__text pt-2 pb-0  pe-3">
-                                                        <div role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                                            aria-valuenow="93"
-                                                            class="v-progress-circular secondary--text"
-                                                            aria-haspopup="true" aria-expanded="false"
-                                                            style="height: 32px; width: 32px;"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                viewBox="22.857142857142858 22.857142857142858 45.714285714285715 45.714285714285715"
-                                                                style="transform: rotate(0deg);">
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="0"
-                                                                    class="v-progress-circular__underlay"></circle>
-                                                                <circle fill="transparent" cx="45.714285714285715"
-                                                                    cy="45.714285714285715" r="20"
-                                                                    stroke-width="5.714285714285714"
-                                                                    stroke-dasharray="125.664" stroke-dashoffset="6.5px"
-                                                                    class="v-progress-circular__overlay"></circle>
-                                                            </svg>
-                                                            <div class="v-progress-circular__info">95</div>
-                                                        </div><span class="v-tooltip v-tooltip--bottom"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i
-                            class="bx bx-left-arrow-alt"></i></button><button type="button" role="presentation"
-                        class="owl-next"><i class="bx bx-right-arrow-alt"></i></button></div>
-                <div class="owl-dots disabled"></div>
-            </div>
-            <div class="text-center ">
-                <a href="case-study.html"><button class="btn-success btn btn-lg">View All</button></a>
-            </div>
-        </div>
-    </section>
-    <!-- case-studies slider starts -->
-
-    <!-- Our Clients Section -->
-    <section class="service-area pb-70" id="OurClients" style="padding-bottom:0px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 mx-auto text-center mb-3">
-                    <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Our Clients</h5>
-                    <p class="mb-5">Nainovate understands the strategic significance of cultivating mutually beneficial
-                        partnerships that not only strengthen service delivery but also contribute to advancing the
-                        company's core mission of continuous innovation and pursuit of excellence. By engaging in
-                        strategic collaborations, Nainovate aims to harness synergies, share expertise, and drive
-                        meaningful impact in the ever-evolving landscape of technology and innovation. These
-                        partnerships serve as pillars of growth, enabling Nainovate to stay at the forefront of industry
-                        trends, deliver exceptional value to clients, and achieve sustainable success in its quest for
-                        innovation and perfection.​
-                    </p>
-                    <p class="mb-2"><span style="font-size: 1rem;">Across industries, our customers face the challenge
-                            of adapting to new ways of working inside and outside their organizations. Underlying this
-                            shift is the fact that people’s relationship with software is changing. Gone is the view of
-                            technology as an impersonal tool. Instead, technology has become a vital part of many
-                            people’s lives, transforming how they work and connect with business associates or
-                            colleagues. People have new expectations around application quality and usability and are
-                            demanding rich, satisfying experiences on every screen.</span></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12" style="margin-bottom: 25px;">
-                    <div class="client-logos-wrapper overflow-hidden border border-2 border-white rounded-2 px-0 px-lg-3 py-3 mx-auto"
-                        style="max-width: 80%;">
-                        <div class="client-logos d-flex align-items-center justify-content-center"
-                            style="animation: scrollLeft 10s linear infinite;">
-                            <div class="logo-item bg-dark me-3 me-lg-4"><img src="assets/img/clinets/eztax-logo.webp"
-                                    alt="EZ Tax Logo" class="img-fluid"></div>
-                            <div class="logo-item me-3 me-lg-4"><img
-                                    src="assets/img/clinets/university of Hyderabad.png"
-                                    alt="University of Hyderabad Logo" class="img-fluid"></div>
-                            <div class="logo-item bg-dark me-3 me-lg-4"><img src="assets/img/clinets/teklogo.png"
-                                    alt="TEK Labs Logo" class="img-fluid"></div>
-                            <div class="logo-item me-3 me-lg-4"><img src="assets/img/clinets/walnutmedical.jpg"
-                                    alt="Walnut Medical Logo" class="img-fluid"></div>
-                            <div class="logo-item bg-dark me-3 me-lg-4"><img src="assets/img/clinets/vt-logo-1.webp"
-                                    alt="VirtuoUS Tech Logo" class="img-fluid"></div>
-                            <div class="logo-item me-3 me-lg-4"><img src="assets/img/clinets/unt.png" alt="UNT Logo"
-                                    class="img-fluid"></div>
-                            <div class="logo-item me-3 me-lg-4"><img src="assets/img/clinets/Nerulus logo.png"
-                                    alt="Nerulus Logo" class="img-fluid"></div>
-                            <div class="logo-item me-3 me-lg-4"><img src="assets/img/clinets/magsway.jpg"
-                                    alt="Magsway Logo" class="img-fluid"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Our Clients -->
-
-
-    <!-- Footer Area -->
-    <footer id="footer" class="footer-area bg-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class=" col-lg-3 col-md-6">
-                        <div class="footer-list ml-50">
-                            <h3>company</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="index.html">About Us</a>
+                        
+                        <!-- Title -->
+                        <h3 class="text-xl font-semibold text-center mb-3 group-hover:text-blue-600 transition-colors">Machine Learning</h3>
+                        
+                        <!-- Default State (Collapsed) -->
+                        <p class="text-center text-gray-600 dark:text-gray-400 text-sm group-hover:hidden">
+                            Intelligent automation & predictions
+                        </p>
+                        
+                        <!-- Hover State (Expanded) -->
+                        <div class="hidden group-hover:block space-y-3 animate-fadeIn">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Custom ML models, predictive analytics, and intelligent automation solutions.
+                            </p>
+                            <ul class="text-xs space-y-1">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                                    <span>Predictive Analytics</span>
                                 </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="team.html">Team</a>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                                    <span>Custom Models</span>
                                 </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="careers.html">Careers</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="contact.html"> Contact</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="footer-list">
-                            <h3>Digital Tansformations</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="cloud-services.html">Cloud Services</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="data-analytics.html">Data Analytics</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="devops.html">DevOps</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="mobile-application.html">Mobile Application Development</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="software-development.html">Custom Software Development</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="e-services.html">E-Services</a>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-blue-600 rounded-full"></div>
+                                    <span>NLP Solutions</span>
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-list">
-                            <h3>AI Tansformations</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="machine-learning.html">Machine Learning</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="computer-vision.html">Computer Vision</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="generative-AI.html">Generative AI</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-6">
-                        <div class="footer-list ml-20">
-                            <h3>Legal</h3>
-                            <ul>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="privacy-policy.html">Privacy</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="terms-condition.html">Terms</a>
-                                </li>
-                                <li>
-                                    <i class='bx bxs-chevron-right'></i>
-                                    <a href="security.html">Security</a>
-                                </li>
-
-                            </ul>
+                            <a href="machine-learning.html" class="inline-flex items-center gap-1 text-blue-600 font-medium text-sm hover:gap-2 transition-all">
+                                Learn more 
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <!-- Contact Us Column -->
-                    <div class="col-lg-6 col-md-6 order-1 order-md-1 d-flex">
-                        <div class="footer-single">
-                            <div class="footer-single-content">
-                                <p>Contact us at</p>
-                                <p><span class="text-black fs-3">info@nainovate.com</span></p>
-                            </div>
-                        </div>
-                    </div>
                 
-                    <!-- Office Address Column -->
-                    <div class="col-lg-6 col-md-6 order-2 order-md-2">
-                        <div class="footer-single text-md-end text-start">
-                            <div class="footer-single-content">
-                                <p>
-                                    Office Address
-                                    <a href="https://maps.google.com/?q=Sri+Harsha+icon,+Nanakramguda,+Hyderabad,+500032" target="_blank">
-                                        <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Google Maps" style="width: 20px; margin-left: 5px; margin-top: 15px;" />
-                                    </a>
-                                </p>
-                                <p><span class="text-black fs-5">Harsha icon, 11th Floor<br>Nanakramguda, Hyderabad, 500032</span></p>
+                <!-- Computer Vision Box -->
+                <div class="ai-service-box group relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden">
+                    <!-- Hover Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-xl font-semibold text-center mb-3 group-hover:text-purple-600 transition-colors">Computer Vision</h3>
+                        
+                        <!-- Default State -->
+                        <p class="text-center text-gray-600 dark:text-gray-400 text-sm group-hover:hidden">
+                            Visual intelligence & recognition
+                        </p>
+                        
+                        <!-- Hover State -->
+                        <div class="hidden group-hover:block space-y-3 animate-fadeIn">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Transform visual data into insights with advanced image and video analysis.
+                            </p>
+                            <ul class="text-xs space-y-1">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                                    <span>Facial Recognition</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                                    <span>Object Detection</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                                    <span>Quality Inspection</span>
+                                </li>
+                            </ul>
+                            <a href="computer-vision.html" class="inline-flex items-center gap-1 text-purple-600 font-medium text-sm hover:gap-2 transition-all">
+                                Learn more 
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Generative AI Box -->
+                <div class="ai-service-box group relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden">
+                    <!-- Hover Background -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-pink-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <!-- Icon -->
+                        <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-xl font-semibold text-center mb-3 group-hover:text-pink-600 transition-colors">Generative AI</h3>
+                        
+                        <!-- Default State -->
+                        <p class="text-center text-gray-600 dark:text-gray-400 text-sm group-hover:hidden">
+                            Content creation & automation
+                        </p>
+                        
+                        <!-- Hover State -->
+                        <div class="hidden group-hover:block space-y-3 animate-fadeIn">
+                            <p class="text-sm text-gray-600 dark:text-gray-400">
+                                Revolutionary GenAI solutions for content generation and process automation.
+                            </p>
+                            <ul class="text-xs space-y-1">
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-pink-600 rounded-full"></div>
+                                    <span>LLM Solutions</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-pink-600 rounded-full"></div>
+                                    <span>Document AI</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <div class="w-1.5 h-1.5 bg-pink-600 rounded-full"></div>
+                                    <span>Voice AI</span>
+                                </li>
+                            </ul>
+                            <a href="gen-ai.html" class="inline-flex items-center gap-1 text-pink-600 font-medium text-sm hover:gap-2 transition-all">
+                                Learn more 
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Central CTA -->
+            <div class="text-center">
+
+                <a href="ai-transformation.html" class="inline-flex items-center mt-8 text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 gap-2 transition-all group">
+                        Explore All AI Solutions
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI Solutions Highlight -->
+    <section id="ai-solutions" class="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-600/5 to-blue-600/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6" data-animate="fade-in">
+                        Next-Gen <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Generative AI</span> Solutions
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8" data-animate="fade-in">
+                        Harness the power of Large Language Models, Computer Vision, and custom AI to revolutionize your operations
+                    </p>
+                    <div class="space-y-4" data-animate="fade-in">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h3 class="font-semibold mb-1">LLM Fine-tuning & RAG</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Custom models tailored to your specific domain and use cases</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Computer Vision Solutions</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Advanced image recognition and video analysis capabilities</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 rounded-full bg-gradient-to-r from-primary-600 to-blue-600 flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h3 class="font-semibold mb-1">Predictive Analytics</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Data-driven insights for strategic decision making</p>
                             </div>
                         </div>
                     </div>
+                    <a href="gen-ai.html" class="inline-flex items-center mt-8 text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 gap-2 transition-all group">
+                        Explore All AI Solutions
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary-600/20 to-blue-600/20 h-96">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <svg width="300" height="300" viewBox="0 0 300 300" class="ai-brain-svg">
+                            <defs>
+                                <linearGradient id="brain-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1">
+                                        <animate attributeName="stop-color" values="#7C3AED;#3B82F6;#9333EA;#7C3AED" dur="4s" repeatCount="indefinite" />
+                                    </stop>
+                                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1">
+                                        <animate attributeName="stop-color" values="#3B82F6;#9333EA;#7C3AED;#3B82F6" dur="4s" repeatCount="indefinite" />
+                                    </stop>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Central Core -->
+                            <circle cx="150" cy="150" r="40" fill="url(#brain-gradient)" opacity="0.8">
+                                <animate attributeName="r" values="40;45;40" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            
+                            <!-- Neural Connections -->
+                            <g class="neural-paths" stroke="url(#brain-gradient)" stroke-width="2" fill="none" opacity="0.6">
+                                <path d="M150,150 Q100,100 50,120">
+                                    <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite" />
+                                </path>
+                                <path d="M150,150 Q200,100 250,120">
+                                    <animate attributeName="stroke-width" values="2;4;2" dur="3s" begin="0.5s" repeatCount="indefinite" />
+                                </path>
+                                <path d="M150,150 Q100,200 50,180">
+                                    <animate attributeName="stroke-width" values="2;4;2" dur="3s" begin="1s" repeatCount="indefinite" />
+                                </path>
+                                <path d="M150,150 Q200,200 250,180">
+                                    <animate attributeName="stroke-width" values="2;4;2" dur="3s" begin="1.5s" repeatCount="indefinite" />
+                                </path>
+                            </g>
+                            
+                            <!-- Orbiting Nodes -->
+                            <g class="nodes">
+                                <circle r="8" fill="#7C3AED">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="10s" repeatCount="indefinite" />
+                                    <animate attributeName="cx" values="150;150" dur="10s" repeatCount="indefinite" />
+                                    <animate attributeName="cy" values="80;80" dur="10s" repeatCount="indefinite" />
+                                </circle>
+                                <circle r="6" fill="#3B82F6">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="-360 150 150" dur="8s" repeatCount="indefinite" />
+                                    <animate attributeName="cx" values="150;150" dur="8s" repeatCount="indefinite" />
+                                    <animate attributeName="cy" values="220;220" dur="8s" repeatCount="indefinite" />
+                                </circle>
+                                <circle r="7" fill="#9333EA">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="12s" repeatCount="indefinite" />
+                                    <animate attributeName="cx" values="80;80" dur="12s" repeatCount="indefinite" />
+                                    <animate attributeName="cy" values="150;150" dur="12s" repeatCount="indefinite" />
+                                </circle>
+                            </g>
+                            
+                            <!-- Pulse Effect -->
+                            <circle cx="150" cy="150" r="60" fill="none" stroke="url(#brain-gradient)" stroke-width="1" opacity="0">
+                                <animate attributeName="r" values="60;100;60" dur="2s" repeatCount="indefinite" />
+                                <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                    </div>
+                    
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white/90 dark:from-black/90 to-transparent">
+                        <h3 class="text-2xl font-bold text-center mb-2">
+                            <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">
+                                Powered by Nainovate
+                            </span>
+                        </h3>
+                        <p class="text-center text-gray-600 dark:text-gray-300">
+                            Where AI Meets Innovation
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-sm-8 col-md-6 text-center text-md-start">
-                        <div class="logo-container" style="font-family: 'Kusanagi';color: #222222;">
-                            <img src="assets/img/logo.gif" alt="Nainovate logo">
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-8 col-md-6">
-                        <p class="fs--1 text-dark my-2 text-center text-md-end">© Nainovate Technologies Private
-                            Limited.
-                            All rights reserved. </p>
-                        <p class="fs--1 text-dark my-2 text-center text-md-end">Our work is protected by patents.</p>
-                    </div>
-                </div>
+    </section>
+    
+    <!-- Case Studies Preview -->
+    <section id="case-studies" class="py-20 md:py-32 bg-white dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-animate="fade-in">
+                    Success Stories
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto" data-animate="fade-in">
+                    See how we've helped businesses transform with AI
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-case-studies-grid>
+                <!-- Case study cards will be dynamically loaded here -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="case-studies.html" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 gap-2 transition-all group">
+                    View All Case Studies
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
             </div>
         </div>
-    </footer>
-    <!-- Footer Area End -->
+    </section>
+    
+    <!-- Clients Section -->
+    <section id="clients" class="py-20 bg-gray-50 dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-animate="fade-in">
+                    Trusted by Industry Leaders
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400" data-animate="fade-in">
+                    Partnering with forward-thinking organizations worldwide
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60" data-clients-grid>
+                <!-- Client logos will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 md:py-32 bg-gradient-to-r from-primary-600 to-blue-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-animate="fade-in">
+                Ready to Transform Your Business?
+            </h2>
+            <p class="text-xl mb-8 text-white/90" data-animate="fade-in">
+                Let's discuss how AI can revolutionize your operations and drive growth
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-animate="fade-in">
+                <a href="contact.html" class="px-8 py-4 bg-white text-primary-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Schedule Consultation
+                </a>
+                <a href="ai-solutions.html" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300">
+                    Explore Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- Load Components -->
+    <script src="assets/components/navigation.js"></script>
+    <script src="assets/components/footer.js"></script>
+    <script src="assets/components/whatsapp-float.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+    <script src="assets/js/simple.js"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load Navigation
+            const navContainer = document.getElementById('navigation-container');
+            if (navContainer && typeof Navigation !== 'undefined') {
+                navContainer.innerHTML = Navigation.render('home'); // Change page name accordingly
+            }
+            
+            // Load Footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof Footer !== 'undefined') {
+                footerContainer.innerHTML = Footer.render();
+            }
+            
+            // Load WhatsApp Float
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer && typeof WhatsAppFloat !== 'undefined') {
+                whatsappContainer.innerHTML = WhatsAppFloat.render();
+            }
+            // Initialize event listeners
+            ComponentsLoader.initializeEventListeners();
+        });
+    </script>
+    
+    <!-- WhatsApp Float Container -->
+    <div id="whatsapp-container"></div>
 
-    <!-- Jquery Min JS -->
-    <script src="assets/js/jquery-3.5.0.min.js"></script>
-    <!-- Bootstrap Bundle Min JS -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- Meanmenu JS -->
-    <script src="assets/js/meanmenu.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!-- Magnific Popup JS -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- Wow JS -->
-    <script src="assets/js/wow.min.js"></script>
-    <!-- Ajaxchimp Min JS -->
-    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-    <!-- Form Validator Min JS -->
-    <script src="assets/js/form-validator.min.js"></script>
-    <!-- Contact Form JS -->
-    <script src="assets/js/contact-form-script.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/custom.js"></script>
-    <!-- Navigation JS -->
-    <script src="assets/js/navigation.js"></script>
 </body>
-
 </html>

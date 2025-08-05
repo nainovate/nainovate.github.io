@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Nainovate | Success Stories & Client Projects</title>
+    <meta name="description" content="Explore our successful AI and digital transformation projects. See how we've helped businesses achieve remarkable results with our innovative solutions.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#9333EA',
+                            500: '#7C3AED',
+                            600: '#6D28D9',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Theme initialization -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        })();
+    </script>
+</head>
+<body class="bg-white dark:bg-black text-gray-900 dark:text-white transition-colors overflow-x-hidden">
+    
+    <!-- Navigation Container -->
+    <div id="navigation-container"></div>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <!-- Subtle Background Pattern -->
+        <div class="absolute inset-0">
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-600/10 to-blue-600/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-blue-600/10 to-purple-600/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Success <span class="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">Stories</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Real-world examples of how we've helped businesses transform with AI and digital innovation
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Filter Section -->
+    <section class="py-8 bg-white dark:bg-black border-b border-gray-200 dark:border-gray-800 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap gap-3 justify-center" data-filters>
+                <button class="px-6 py-2 rounded-full font-medium transition-all duration-300 bg-primary-600 text-white" data-filter="all">
+                    All Projects
+                </button>
+                <button class="px-6 py-2 rounded-full font-medium transition-all duration-300 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="ai">
+                    AI & Machine Learning
+                </button>
+                <button class="px-6 py-2 rounded-full font-medium transition-all duration-300 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="cloud">
+                    Cloud Solutions
+                </button>
+                <button class="px-6 py-2 rounded-full font-medium transition-all duration-300 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" data-filter="digital">
+                    Digital Transformation
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Case Studies Grid -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-case-studies-grid>
+                <!-- Case study cards will be loaded here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Case Study -->
+    <section id="featured-study" class="py-20 bg-white dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Project</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Our most impactful transformation</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-primary-600/5 to-blue-600/5 rounded-3xl p-8 md:p-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 mb-4">
+                            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium">
+                                GenAI Implementation
+                            </span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium">
+                                Enterprise Scale
+                            </span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">Global Banking Corp - AI-Powered Customer Service</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+                            Revolutionized customer experience by implementing a comprehensive GenAI solution that handles millions of customer interactions daily across multiple channels.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div>
+                                <h4 class="font-semibold mb-2">Challenge</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Handle 10M+ monthly customer queries while maintaining personalized service and reducing operational costs.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Solution</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Deployed custom LLM with RAG for context-aware responses, integrated with existing CRM and support systems.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <a href="case-studies.html" class="inline-flex items-center text-primary-600 dark:text-primary-400 font-semibold hover:gap-3 gap-2 transition-all">
+                            Read Full Case Study
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-4xl font-bold text-primary-600 mb-2">85%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Query Resolution Rate</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-4xl font-bold text-blue-600 mb-2">60%</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Cost Reduction</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-4xl font-bold text-green-600 mb-2">4.8/5</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Customer Satisfaction</div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-4xl font-bold text-purple-600 mb-2">24/7</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-400">Availability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Impact by Numbers</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Measurable results across all our projects</p>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-primary-600 mb-2" data-counter="150">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Projects Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-blue-600 mb-2" data-counter="95">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Client Satisfaction %</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-green-600 mb-2">$<span data-counter="50">0</span>M</div>
+                    <div class="text-gray-600 dark:text-gray-400">Value Generated</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-purple-600 mb-2" data-counter="30">0</div>
+                    <div class="text-gray-600 dark:text-gray-400">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industries Section -->
+    <section class="py-20 bg-white dark:bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Industries We Serve</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">Transforming businesses across sectors</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+                <div class="text-center group cursor-pointer">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-primary-600/10 to-blue-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Banking</h3>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-600/10 to-green-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Healthcare</h3>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-600/10 to-purple-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Retail</h3>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-600/10 to-pink-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Technology</h3>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-red-600/10 to-orange-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Manufacturing</h3>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-yellow-600/10 to-red-600/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold">Finance</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-600 to-blue-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Be Our Next Success Story?
+            </h2>
+            <p class="text-xl mb-8 text-white/90">
+                Let's discuss how we can transform your business with our proven solutions
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="px-8 py-4 bg-white text-primary-600 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                    Start Your Project
+                </a>
+                <a href="#" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300">
+                    Download Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <!-- Load Components -->
+    <script src="assets/components/navigation.js"></script>
+    <script src="assets/components/footer.js"></script>
+    <script src="assets/components/whatsapp-float.js"></script>
+    <script src="assets/js/components-loader.js"></script>
+    <script src="assets/js/simple.js"></script>
+    <script src="assets/js/case-studies-page.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load Navigation
+            const navContainer = document.getElementById('navigation-container');
+            if (navContainer && typeof Navigation !== 'undefined') {
+                navContainer.innerHTML = Navigation.render('case-studies'); // Change page name accordingly
+            }
+            
+            // Load Footer
+            const footerContainer = document.getElementById('footer-container');
+            if (footerContainer && typeof Footer !== 'undefined') {
+                footerContainer.innerHTML = Footer.render();
+            }
+            
+            // Load WhatsApp Float
+            const whatsappContainer = document.getElementById('whatsapp-container');
+            if (whatsappContainer && typeof WhatsAppFloat !== 'undefined') {
+                whatsappContainer.innerHTML = WhatsAppFloat.render();
+            }
+            // Initialize event listeners
+            ComponentsLoader.initializeEventListeners();
+        });
+    </script>
+
+    <!-- WhatsApp Float Container -->
+    <div id="whatsapp-container"></div>
+    
+</body>
+</html>
