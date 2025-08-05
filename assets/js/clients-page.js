@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', function() {
             content: 'The medical device data digitization platform Nainovate built for us is exceptional. We can now track patient vitals in real-time with 95% accuracy, enabling better healthcare outcomes and streamlined operations.',
             rating: 5
         },
-        {
-            name: 'Sai',
-            role: 'Founder',
-            company: 'Freshbus',
-            content: 'Working with Nainovate on our digital transformation has been game-changing. Their expertise helped us automate critical processes, resulting in 40% cost reduction and improved service delivery to our customers.',
-            rating: 5
-        },
+        // {
+        //     name: 'Sai',
+        //     role: 'Founder',
+        //     company: 'Freshbus',
+        //     content: 'Working with Nainovate on our digital transformation has been game-changing. Their expertise helped us automate critical processes, resulting in 40% cost reduction and improved service delivery to our customers.',
+        //     rating: 5
+        // },
         {
             name: 'Surya',
             role: 'Director',
