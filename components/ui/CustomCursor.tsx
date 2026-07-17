@@ -7,7 +7,7 @@ export function CustomCursor() {
 
   useEffect(() => {
     setMounted(true);
-    
+
     const cursor = document.createElement('div');
     const cursorDot = document.createElement('div');
     

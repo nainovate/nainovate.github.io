@@ -1,23 +1,16 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import LinksPageClient from "@/components/pages/LinksPageClient";
 
 export const metadata: Metadata = {
-  title: "Redirecting…",
-  robots: { index: false, follow: false },
+  title: "Connect with Nainovate — Links",
+  description:
+    "Reach the Nainovate team fast — WhatsApp, email, live demo, and more. Enterprise AI, no-code.",
+  openGraph: {
+    title: "Connect with Nainovate",
+    description: "One tap to reach the Nainovate team — WhatsApp, email, demo, and more.",
+  },
 };
 
-export default function LinksRedirect() {
-  return (
-    <>
-      {/* No-JS redirect */}
-      <meta httpEquiv="refresh" content="0; url=/" />
-      {/* Instant JS redirect (fires before React hydration) */}
-      <script
-        dangerouslySetInnerHTML={{ __html: "window.location.replace('/');" }}
-      />
-      <p style={{ padding: "2rem", textAlign: "center" }}>
-        Redirecting to the <Link href="/">homepage</Link>…
-      </p>
-    </>
-  );
+export default function LinksPage() {
+  return <LinksPageClient />;
 }

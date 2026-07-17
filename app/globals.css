@@ -407,3 +407,33 @@ button:hover ~ .custom-cursor {
 .animate-fadeIn {
   animation: fadeIn 0.6s ease-out;
 }
+
+/* Holographic watermark marquee entrance.
+   Final resting state = translateX(0) (natural position), so if animations
+   are unsupported or reduced-motion is on, the text is simply static. */
+@keyframes marquee-in-left {
+  from { transform: translateX(-130%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes marquee-in-right {
+  from { transform: translateX(130%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+.marquee-in {
+  display: inline-block;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: both;
+}
+.marquee-in-left  { animation-name: marquee-in-left; }
+.marquee-in-right { animation-name: marquee-in-right; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-in { animation: none !important; }
+}
+
+/* Links page only: hide the global custom cursor dot and restore the native
+   cursor. Other pages keep the cursor dot unchanged. */
+body.links-page .custom-cursor { display: none !important; }
+body.links-page,
+body.links-page * { cursor: auto !important; }
