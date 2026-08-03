@@ -94,7 +94,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body
-        className="`${inter.className} bg-black text-white antialiased"
+        className={`${inter.className} bg-black text-white antialiased`}
         suppressHydrationWarning={true}
       >
         <Script
@@ -113,6 +113,7 @@ export default function RootLayout({
         <Suspense fallback={<></>}>
           <PageTracker />
         </Suspense>
+        <JsonLd data={organizationSchema} />
         <CustomCursor />
         <Header />
         {children}
